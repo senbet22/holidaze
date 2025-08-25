@@ -8,7 +8,7 @@ import dunestay_logo_text_dark from "./dunestay_logo_text_dark.svg";
 import cross_icon from "./cross_icon.svg";
 import parking_icon from "./parking_icon.svg";
 import search_icon from "./search_icon.svg";
-import search_icon_dark from "./search_icon_dark.svg";
+import search_icon_black from "./search_icon_black.svg";
 import pets_icon from "./pets_icon.svg";
 import wifi_icon from "./wifi_icon.svg";
 import breakfast_icon from "./breakfast_icon.svg";
@@ -27,7 +27,7 @@ export const assets = {
   dunestay_logo_text_dark,
   parking_icon,
   search_icon,
-  search_icon_dark,
+  search_icon_black,
   pets_icon,
   wifi_icon,
   breakfast_icon,

@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+/* Color Palette*/
+@theme {
+  --color-text: #0b1d2b;
+  --color-background: #f9fbfa;
+  --color-primary: #1d9dbe;
+  --color-secondary: #f7c59f;
+  --color-accent: #2a5c68;
+
+  --color-neutral: #dadada;
+}
+
+/* Dark Mode Colors */
+:root.dark,
+[data-theme="dark"] {
+  --color-neutral: #1e1e1e;
+
+  --color-text: #d9f9ea;
+  --color-background: #040605;
+  --color-primary: #40c2e2;
+  --color-secondary: #2b1e36;
+  --color-accent: #96c8d4;
+}
