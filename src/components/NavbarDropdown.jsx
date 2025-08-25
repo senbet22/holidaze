@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { assets } from "../assets/assets.mjs";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../hooks/useAuth";
 
 const NavbarDropdown = () => {
   const { logout, user } = useAuth();

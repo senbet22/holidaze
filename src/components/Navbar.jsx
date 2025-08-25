@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { assets } from "../assets/assets.mjs";
 import { useDarkMode } from "../hooks/useDarkMode";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../hooks/useAuth";
+
 import NavbarDropdown from "./NavbarDropdown";
 
 const Navbar = () => {

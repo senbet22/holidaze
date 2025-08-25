@@ -5,6 +5,7 @@ import Venue from "./pages/Venue";
 import Auth from "./pages/Auth";
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
+import ProtectedRoute from "./context/ProtectedRoute";
 
 function App() {
   return (
@@ -14,7 +15,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/venue/:id" element={<Venue />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
       <Footer />
     </>
