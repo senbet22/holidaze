@@ -34,7 +34,7 @@ const Footer = () => {
             <p className="text-xl font-medium mb-5">COMPANY</p>
             <ul className="flex text-lg flex-col gap-2">
               <li>
-                <NavLink to="/" className="hover:text-accent transition">
+                <NavLink to="/" className="hover:text-text transition">
                   Home
                 </NavLink>
               </li>
