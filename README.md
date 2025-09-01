@@ -1,12 +1,11 @@
-# React + Vite
+# Welcome to DuneStay!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+We specialize in unique dune-side venues that invite guests to unwind beneath starfilled skies. Our mission is simple: to connect travelers and hosts through serene desert escapes designed for wonder, warmth, and adventure.
 
-Currently, two official plugins are available:
+## Venues
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Venues marked with '✨New' are the ones not rated yet.
 
-## Expanding the ESLint configuration
+## Auth
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- User Must create an with @stud.noroff.no or @noroff.no for a valid e-mail.

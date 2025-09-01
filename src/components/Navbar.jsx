@@ -77,14 +77,17 @@ const Navbar = () => {
               </button>
             </NavLink>
           ) : (
-            <NavbarDropdown />
+            <NavbarDropdown
+              isDarkMode={isDarkMode}
+              toggleDarkMode={toggleDarkMode}
+            />
           )}
         </div>
 
         {/* Mobile Menu Toggle */}
         <img
           className="md:hidden fixed right-4 cursor-pointer"
-          src={assets.menu_icon}
+          src={isDarkMode ? assets.menu_icon_white : assets.menu_icon}
           alt="Menu"
           onClick={toggleMobileMenu}
         />

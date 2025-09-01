@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { assets } from "../assets/assets.mjs";
 import { useAuth } from "../hooks/useAuth";
 
-const NavbarDropdown = () => {
+const NavbarDropdown = ({ isDarkMode }) => {
   const { logout, user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -38,7 +38,7 @@ const NavbarDropdown = () => {
           className={`w-10 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
-          src={assets.dropdown_icon}
+          src={isDarkMode ? assets.dropdown_icon_white : assets.dropdown_icon}
           alt="Dropdown Button"
         />
       </div>
