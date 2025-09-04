@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { registerUser } from "../API/register";
+import { useState } from "react";
 import { loginUser } from "../API/login"; // Import the login service
+import { registerUser } from "../API/register"; // Import the Register service
 import { toast } from "react-toastify";
 import { assets } from "../assets/assets.mjs";
 import { useNavigate } from "react-router-dom";

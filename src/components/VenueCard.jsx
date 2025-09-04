@@ -43,7 +43,7 @@ const VenueCard = ({ venue }) => {
               {venue.rating}
             </p>
           ) : (
-            <p className="flex mx-2 text-lg">✨New</p>
+            <p className="flex mx-2 text-lg text-primary">✨New</p>
           )}
         </div>
         <div>
