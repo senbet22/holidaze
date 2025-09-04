@@ -7,8 +7,6 @@ import { API_KEY } from "./constants.mjs";
  * where necessary and includes headers for content type and API key.
  */
 
-const accessToken = getAccessToken();
-
 export const optionGet = {
   method: "GET",
   headers: {
@@ -16,11 +14,11 @@ export const optionGet = {
   },
 };
 
-export const optionGetProfile = (token) => ({
+export const optionGetProfile = () => ({
   method: "GET",
   headers: {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${accessToken}`,
+    Authorization: `Bearer ${getAccessToken()}`,
     "X-Noroff-API-Key": API_KEY,
   },
 });
@@ -29,7 +27,7 @@ export const optionPost = (postReq) => ({
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${accessToken}`,
+    Authorization: `Bearer ${getAccessToken()}`,
     "X-Noroff-API-Key": API_KEY,
   },
   body: JSON.stringify(postReq),
@@ -39,7 +37,7 @@ export const optionPut = (putReq) => ({
   method: "PUT",
   headers: {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${accessToken}`,
+    Authorization: `Bearer ${getAccessToken()}`,
     "X-Noroff-API-Key": API_KEY,
   },
   body: JSON.stringify(putReq),
@@ -49,7 +47,7 @@ export const optionDelete = {
   method: "DELETE",
   headers: {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${accessToken}`,
+    Authorization: `Bearer ${getAccessToken()}`,
     "X-Noroff-API-Key": API_KEY,
   },
 };
