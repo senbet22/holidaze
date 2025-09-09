@@ -48,6 +48,11 @@ const VenueCard = ({ venue }) => {
         </div>
         <div>
           <p className="flex truncate mt-2 text-text">
+            <img
+              src={assets.location_icon}
+              alt="star icon"
+              className="w-5 h-7 mx-1"
+            />
             {venue.location.city}, {venue.location.country}
           </p>
         </div>

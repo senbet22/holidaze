@@ -1,11 +1,14 @@
-import { API_PROFILE_BOOKINGS, API_PROFILE_UPDATE } from "./constants.mjs";
+import { API_PROFILE } from "./constants.mjs";
 import { optionGetProfile, optionPut } from "./requestOptions.mjs";
+import { getProfileName } from "./sessionStorage.mjs";
 
 // Fetch profile bookings
 export const getProfileBookings = async () => {
-  const url = `${API_PROFILE_BOOKINGS}?sort=dateFrom&sortOrder=asc`; // earliest bookings first
-
   try {
+    const profileName = getProfileName();
+    if (!profileName) throw new Error("No logged-in profile");
+
+    const url = `${API_PROFILE}/${profileName}/bookings?_venue=true&sort=dateFrom&sortOrder=asc`;
     const response = await fetch(url, optionGetProfile());
     const data = await response.json();
 
@@ -22,7 +25,11 @@ export const getProfileBookings = async () => {
 // Update profile (bio + avatar)
 export const updateProfile = async (updateData) => {
   try {
-    const response = await fetch(API_PROFILE_UPDATE, optionPut(updateData));
+    const profileName = getProfileName();
+    if (!profileName) throw new Error("No logged-in profile");
+
+    const url = `${API_PROFILE}/${profileName}`;
+    const response = await fetch(url, optionPut(updateData));
     const data = await response.json();
 
     if (!response.ok) {

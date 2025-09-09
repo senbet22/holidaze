@@ -17,7 +17,7 @@ const ProfileCard = () => {
         const parsed = JSON.parse(storedProfile);
         setProfile({
           ...parsed,
-          role: parsed.venueManager ? "Manager ✨" : "",
+          role: parsed.venueManager ? "Manager" : "User",
           avatar: parsed.avatar?.url,
           venueCount: parsed.venues?.length || 0,
         });
