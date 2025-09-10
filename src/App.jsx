@@ -8,12 +8,13 @@ import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./context/ProtectedRoute";
 import VenueManager from "./pages/VenueManager";
-
+import ScrollToTop from "./components/routing/ScrollToTop";
 function App() {
   return (
     <>
       <Navbar />
       <ToastContainer theme="dark" />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/auth" element={<Auth />} />
