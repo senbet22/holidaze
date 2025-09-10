@@ -38,12 +38,11 @@ const UpcomingBookingsCard = () => {
         setLoading(false);
       }
     };
-
     fetchBookings();
   }, []);
 
   return (
-    <div className="bg-secondary rounded-lg p-4 min-h-52">
+    <div className=" rounded-lg p-4 min-h-52">
       <div className="mb-4 relative inline-block">
         <h2 className="text-xl font-semibold text-text mb-1">
           Upcoming bookings

@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets.mjs";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 const VenueCard = ({ venue }) => {
   const currencySymbol = "$";
+
+  const { isDarkMode } = useDarkMode();
 
   const navigate = useNavigate();
 
@@ -24,7 +27,7 @@ const VenueCard = ({ venue }) => {
       />
 
       <div className="flex text-text flex-col justify-between p-2 mt-auto">
-        <h2 className="text-lg mb-0 font-semibold p-1 truncate">
+        <h2 className="text-lg mb-0 font-semibold p-1 line-clamp-2">
           {venue.name}
         </h2>
         <div className="flex justify-between">
@@ -49,9 +52,11 @@ const VenueCard = ({ venue }) => {
         <div>
           <p className="flex truncate mt-2 text-text">
             <img
-              src={assets.location_icon}
-              alt="star icon"
-              className="w-5 h-7 mx-1"
+              src={
+                isDarkMode ? assets.location_icon_white : assets.location_icon
+              }
+              alt="Location icon"
+              className="w-5 h-6 mr-1"
             />
             {venue.location.city}, {venue.location.country}
           </p>

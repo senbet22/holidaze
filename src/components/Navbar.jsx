@@ -28,7 +28,7 @@ const Navbar = () => {
   }, [mobileMenu]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 h-[60px] bg-secondary text-text shadow-md">
+    <nav className="fixed top-0 left-0 w-full z-50 h-[60px] sm:h-[70px] content-center bg-secondary text-text shadow-md">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <NavLink to="/">
@@ -39,7 +39,7 @@ const Navbar = () => {
               src={
                 isDarkMode ? assets.dunestay_dark_logo : assets.dunestay_logo
               }
-              alt=""
+              alt="Dunestay Logo"
             />
             <img
               className=" h-12"

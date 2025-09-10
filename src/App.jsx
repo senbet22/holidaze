@@ -7,6 +7,7 @@ import Auth from "./pages/Auth";
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./context/ProtectedRoute";
+import VenueManager from "./pages/VenueManager";
 
 function App() {
   return (
@@ -22,6 +23,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/venuemanager"
+          element={
+            <ProtectedRoute requireVenueManager={true}>
+              <VenueManager />
             </ProtectedRoute>
           }
         />

@@ -6,6 +6,7 @@ import dunestay_logo_text_dark from "./dunestay_logo_text_dark.svg";
 
 // Icons
 import cross_icon from "./cross_icon.svg";
+import cross_icon_white from "./cross_icon_white.svg";
 import parking_icon from "./parking_icon.svg";
 import search_icon from "./search_icon.svg";
 import search_icon_black from "./search_icon_black.svg";
@@ -17,6 +18,7 @@ import menu_icon_white from "./menu_icon_white.svg";
 import check_icon from "./check_icon.svg";
 import star_icon from "./star_icon.svg";
 import location_icon from "./location_icon.svg";
+import location_icon_white from "./location_icon_white.svg";
 import dropdown_icon from "./dropdown_icon.svg";
 import dropdown_icon_white from "./dropdown_icon_white.svg";
 import no_venue_found from "./no_venue_found.svg";
@@ -37,11 +39,13 @@ export const assets = {
   wifi_icon,
   breakfast_icon,
   cross_icon,
+  cross_icon_white,
   check_icon,
   menu_icon,
   menu_icon_white,
   star_icon,
   location_icon,
+  location_icon_white,
   dropdown_icon,
   dropdown_icon_white,
   desert_background,

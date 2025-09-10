@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { updateProfile } from "../../API/profileService.mjs";
 import { assets } from "../../assets/assets.mjs";
+import { useDarkMode } from "../../hooks/useDarkMode";
 
 const ProfileCard = () => {
+  const { isDarkMode } = useDarkMode();
+
   const [profile, setProfile] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [bio, setBio] = useState("");
@@ -100,7 +103,7 @@ const ProfileCard = () => {
               onClick={() => setIsModalOpen(false)}
             >
               <img
-                src={assets.cross_icon}
+                src={isDarkMode ? assets.cross_icon_white : assets.cross_icon}
                 className="size-6 cursor-pointer"
                 alt=""
               />

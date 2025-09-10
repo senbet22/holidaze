@@ -16,11 +16,11 @@ const SearchBar = ({ onSearch }) => {
     <div className="max-w-6xl bg-secondary shadow-sm w-full mx-auto rounded-sm mt-5 mb-15 py-3">
       <div className="flex-col w-full items-center">
         <h2 className="text-2xl font-medium text-accent text-center my-4">
-          Hey Senbet! Where would you like to stay?
+          Hey! Where would you like to stay?
         </h2>
 
         {/* Search Input */}
-        <div className="relative w-full mb-6 mx-auto md:px-10 flex">
+        <div className="relative w-full mb-6 mx-auto px-2 md:px-10 flex">
           <div className="relative flex-1">
             <input
               type="text"

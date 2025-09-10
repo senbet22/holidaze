@@ -10,9 +10,6 @@ const Profile = () => {
           <h1 className="text-2xl font-medium text-text">
             Your upcoming adventures await ✨
           </h1>
-          <button className="bg-primary text-text px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
-            Manage my Venue's
-          </button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

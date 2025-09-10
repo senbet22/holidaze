@@ -56,7 +56,8 @@ const NavbarDropdown = ({ isDarkMode }) => {
           >
             Home
           </NavLink>
-          <hr className="border-gray-200" />
+          <hr className="border-accent" />
+          {/* Only shows if user is logged in */}
           <NavLink
             to="/profile"
             onClick={() => setIsOpen(false)}
@@ -68,7 +69,27 @@ const NavbarDropdown = ({ isDarkMode }) => {
           >
             My Profile
           </NavLink>
-          <hr className="border-gray-200" />
+          <hr className="border-accent" />
+
+          {/* Only show if user is a Venue Manager */}
+          {user?.venueManager && (
+            <>
+              {" "}
+              <NavLink
+                to="/venueManager"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  `hover:text-primary cursor-pointer py-2 px-2 rounded transition-colors ${
+                    isActive ? "bg-secondary" : "hover:bg-gray-50"
+                  }`
+                }
+              >
+                Manage Venues
+              </NavLink>
+              <hr className="border-accent" />
+            </>
+          )}
+
           <p
             onClick={() => {
               setIsOpen(false);

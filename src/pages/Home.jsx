@@ -28,8 +28,8 @@ const Home = () => {
     // Empty state
     if (venues.length === 0) {
       return (
-        <div className="flex w-full justify-start items-center">
-          <img src={assets.no_venue_found} alt="" />
+        <div className="flex w-full justify-start items-center mb-25">
+          <img src={assets.no_venue_found} alt="No Venue Found" />
         </div>
       );
     }
@@ -52,7 +52,9 @@ const Home = () => {
   };
   return (
     <div className="flex flex-col justify-between p-2 mt-10 pt-14 bg-background">
-      <SearchBar onSearch={handleSearch} />
+      <div className="x-2">
+        <SearchBar onSearch={handleSearch} />
+      </div>
 
       <div className="max-w-6xl mx-auto w-full mt-10">
         <h1 className="text-text text-xl">Venues</h1>
