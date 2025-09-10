@@ -36,6 +36,10 @@ const ManagerVenueCard = ({ venue, onEdit, onDelete }) => {
               src={venue.media[0].url}
               alt={venue.media[0].alt || venue.name}
               className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.src = assets.no_image_found;
+                e.currentTarget.onerror = null;
+              }}
             />
           ) : (
             <span className="text-gray-400">Venue Image</span>

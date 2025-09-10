@@ -24,6 +24,10 @@ const VenueCard = ({ venue }) => {
           venue.media?.length > 0 ? venue.media[0].url : assets.no_image_found
         }
         alt={venue.media?.length > 0 ? venue.media[0].alt : "No venue image"}
+        onError={(e) => {
+          e.currentTarget.src = assets.no_image_found;
+          e.currentTarget.onerror = null; // prevent infinite loop if fallback also fails
+        }}
       />
 
       <div className="flex text-text flex-col justify-between p-2 mt-auto">

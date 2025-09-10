@@ -54,7 +54,7 @@ const UpcomingBookingsCard = () => {
       {error && <p className="text-red-500">Error: {error}</p>}
       {!loading && !error && bookings.length === 0 && (
         <div className="mb-25">
-          <img src={assets.no_upcoming_booking} alt="" />
+          <img src={assets.no_upcoming_booking} alt="No upcoming bookings" />
         </div>
       )}
 
@@ -66,8 +66,12 @@ const UpcomingBookingsCard = () => {
           >
             <div className="aspect-video overflow-hidden">
               <img
-                src={booking.media?.[0]?.url || assets.placeholder_image}
+                src={booking.media?.[0]?.url || assets.no_upcoming_booking}
                 alt={booking.media?.[0]?.alt || booking.name}
+                onError={(e) => {
+                  e.currentTarget.src = assets.no_image_found;
+                  e.currentTarget.onerror = null;
+                }}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>

@@ -1,3 +1,4 @@
+import { assets } from "../../assets/assets.mjs";
 const ConfirmedBookings = ({ booking, venue }) => {
   if (!booking) return null;
 
@@ -23,6 +24,10 @@ const ConfirmedBookings = ({ booking, venue }) => {
           <img
             src={venue.media[0].url}
             alt={venue.media[0].alt || venue.name}
+            onError={(e) => {
+              e.currentTarget.src = assets.no_image_found;
+              e.currentTarget.onerror = null;
+            }}
             className="w-full h-full object-cover"
           />
         ) : (
@@ -32,7 +37,7 @@ const ConfirmedBookings = ({ booking, venue }) => {
 
       <div className="flex text-text flex-col p-4 space-y-2">
         {/* Guest Info */}
-        <div className="flex items-center text-sm text-gray-600">
+        <div className="flex items-center text-sm text-text">
           <span>
             {booking.guests} Guest{booking.guests > 1 ? "s" : ""}
           </span>
@@ -47,11 +52,10 @@ const ConfirmedBookings = ({ booking, venue }) => {
         <div className="pt-2 border-t border-gray-100">
           <div className="flex justify-between items-center mb-1">
             <p className="text-text text-lg font-medium">
-              Total:{" "}
-              <span className=" text-accent">${venue.price * nights}</span>
+              Total: ${venue.price * nights}
             </p>
 
-            <span className="text-sm text-text/70">{nights} nights</span>
+            <span className="text-sm text-accent">{nights} nights</span>
           </div>
           <p className="text-sm text-text truncate">
             Guest: {booking.customer?.name}
