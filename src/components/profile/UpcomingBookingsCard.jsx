@@ -53,7 +53,9 @@ const UpcomingBookingsCard = () => {
       {loading && <p className="text-text/70">Loading bookings...</p>}
       {error && <p className="text-red-500">Error: {error}</p>}
       {!loading && !error && bookings.length === 0 && (
-        <p className="text-text/70">No upcoming bookings found.</p>
+        <div className="mb-25">
+          <img src={assets.no_upcoming_booking} alt="" />
+        </div>
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

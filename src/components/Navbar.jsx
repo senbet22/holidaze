@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { assets } from "../assets/assets.mjs";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { useAuth } from "../hooks/useAuth";
-
+import HomeLink from "./routing/HomeLink";
 import NavbarDropdown from "./NavbarDropdown";
 
 const Navbar = () => {
@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-50 h-[60px] sm:h-[70px] content-center bg-secondary text-text shadow-md">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <NavLink to="/">
+        <HomeLink to="/">
           <div className=" flex   items-center rounded-full text-background h-15 ml-2 gap-2">
             {" "}
             <img
@@ -51,7 +51,7 @@ const Navbar = () => {
               alt=""
             />
           </div>
-        </NavLink>
+        </HomeLink>
 
         <div
           title="Dark Mode Toggle"
