@@ -26,12 +26,12 @@ const VenueCard = ({ venue }) => {
         alt={venue.media?.length > 0 ? venue.media[0].alt : "No venue image"}
         onError={(e) => {
           e.currentTarget.src = assets.no_image_found;
-          e.currentTarget.onerror = null; // prevent infinite loop if fallback also fails
+          e.currentTarget.onerror = null; 
         }}
       />
 
       <div className="flex text-text flex-col justify-between p-2 mt-auto">
-        <h2 className="text-lg mb-0 font-semibold p-1 line-clamp-2">
+        <h2 className="text-lg mb-0 font-semibold p-1 truncate">
           {venue.name}
         </h2>
         <div className="flex justify-between">

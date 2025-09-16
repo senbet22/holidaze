@@ -7,12 +7,16 @@ import dunestay_logo_text_dark from "./dunestay_logo_text_dark.svg";
 // Icons
 import cross_icon from "./cross_icon.svg";
 import cross_icon_white from "./cross_icon_white.svg";
-import parking_icon from "./parking_icon.svg";
 import search_icon from "./search_icon.svg";
 import search_icon_black from "./search_icon_black.svg";
+import parking_icon from "./parking_icon.svg";
+import parking_icon_white from "./parking_icon_white.svg";
 import pets_icon from "./pets_icon.svg";
+import pets_icon_white from "./pets_icon_white.svg";
 import wifi_icon from "./wifi_icon.svg";
+import wifi_icon_white from "./wifi_icon_white.svg";
 import breakfast_icon from "./breakfast_icon.svg";
+import breakfast_icon_white from "./breakfast_icon_white.svg";
 import menu_icon from "./menu_icon.svg";
 import menu_icon_white from "./menu_icon_white.svg";
 import check_icon from "./check_icon.svg";
@@ -33,12 +37,16 @@ export const assets = {
   dunestay_dark_logo,
   dunestay_logo_text,
   dunestay_logo_text_dark,
-  parking_icon,
   search_icon,
   search_icon_black,
+  parking_icon,
+  parking_icon_white,
   pets_icon,
+  pets_icon_white,
   wifi_icon,
+  wifi_icon_white,
   breakfast_icon,
+  breakfast_icon_white,
   cross_icon,
   cross_icon_white,
   check_icon,

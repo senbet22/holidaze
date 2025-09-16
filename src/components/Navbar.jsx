@@ -9,8 +9,7 @@ import NavbarDropdown from "./NavbarDropdown";
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
-  const { isAuthenticated, logout } = useAuth();
-
+  const { isAuthenticated, logout, user } = useAuth();
   const toggleMobileMenu = () => {
     setMobileMenu(!mobileMenu);
   };
@@ -124,15 +123,31 @@ const Navbar = () => {
               />
             </div>
 
-            <ul className="flex flex-col text-[#0b1d2b] items-center gap-2 mt-5 px-5 text-2xl font-medium flex-grow">
+            <ul className="flex flex-col text-text items-center gap-2 mt-5 px-5 text-2xl font-medium flex-grow">
               <NavLink onClick={() => setMobileMenu(false)} to="/">
                 <p className="px-4 py-2 rounded inline-block">HOME</p>
               </NavLink>
+
               {isAuthenticated() && (
-                <NavLink onClick={() => setMobileMenu(false)} to="/profile">
-                  <p className="px-4 py-2 rounded inline-block">PROFILE</p>
-                </NavLink>
+                <>
+                  <NavLink onClick={() => setMobileMenu(false)} to="/profile">
+                    <p className="px-4 py-2 rounded inline-block">PROFILE</p>
+                  </NavLink>
+
+                  {/* Venue Manager Link */}
+                  {user?.venueManager && (
+                    <NavLink
+                      onClick={() => setMobileMenu(false)}
+                      to="/venuemanager"
+                    >
+                      <p className="px-4 py-2 rounded inline-block">
+                        MANAGE VENUES
+                      </p>
+                    </NavLink>
+                  )}
+                </>
               )}
+
               {!isAuthenticated() ? (
                 <NavLink onClick={() => setMobileMenu(false)} to="/auth">
                   <p className="px-4 py-2 rounded inline-block">LOGIN</p>

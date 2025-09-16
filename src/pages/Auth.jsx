@@ -90,7 +90,7 @@ const Auth = () => {
           <div className="w-full">
             <p>Name</p>
             <input
-              className="border border-accent rounded w-full p-2 mt-1"
+              className="border bg-background/40 border-accent rounded w-full p-2 mt-1"
               type="text"
               onChange={(e) => setName(e.target.value)}
               value={name}
@@ -106,7 +106,7 @@ const Auth = () => {
         <div className="w-full">
           <p>Email</p>
           <input
-            className="border border-accent rounded w-full p-2 mt-1"
+            className="border bg-background/40 border-accent rounded w-full p-2 mt-1"
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
@@ -121,7 +121,7 @@ const Auth = () => {
         <div className="w-full">
           <p>Password</p>
           <input
-            className="border border-accent rounded w-full p-2 mt-1"
+            className="border bg-background/40 border-accent rounded w-full p-2 mt-1"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}

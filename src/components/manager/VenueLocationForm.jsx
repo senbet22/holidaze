@@ -1,5 +1,3 @@
-import React from "react";
-
 const VenueLocationForm = ({ location, setLocation }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;

@@ -4,7 +4,7 @@ import UpcomingBookingsCard from "../components/profile/UpcomingBookingsCard";
 const Profile = () => {
   return (
     <div className="min-h-screen bg-background p-2">
-      <div className="max-w-6xl mx-auto mt-25">
+      <div className="max-w-6xl mx-auto my-25">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-medium text-text">

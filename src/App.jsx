@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Venue from "./pages/Venue";
+import VenueDetail from "./pages/VenueDetail";
 import { ToastContainer } from "react-toastify";
 import Auth from "./pages/Auth";
 import Profile from "./pages/Profile";
@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/auth" element={<Auth />} />
-        <Route path="/venue/:id" element={<Venue />} />
+        <Route path="/venue/:id" element={<VenueDetail />} />
         <Route
           path="/profile"
           element={

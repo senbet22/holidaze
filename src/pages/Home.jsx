@@ -28,7 +28,7 @@ const Home = () => {
     // Empty state
     if (venues.length === 0) {
       return (
-        <div className="flex w-full justify-start items-center mb-25">
+        <div className="flex w-full justify-start items-center my-25">
           <img src={assets.no_venue_found} alt="No Venue Found" />
         </div>
       );
@@ -51,7 +51,7 @@ const Home = () => {
     );
   };
   return (
-    <div className="flex flex-col justify-between p-2 mt-10 pt-14 bg-background">
+    <div className="flex flex-col justify-between p-2  mt-10 pb-25  pt-14 bg-background">
       <div className="x-2">
         <SearchBar onSearch={handleSearch} />
       </div>

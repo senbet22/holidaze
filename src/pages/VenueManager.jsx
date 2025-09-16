@@ -98,7 +98,7 @@ const VenueManager = () => {
 
   return (
     <div className="min-h-screen bg-background p-2">
-      <div className="max-w-6xl mx-auto mt-25">
+      <div className="max-w-6xl mx-auto my-25">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-medium text-text">
@@ -107,28 +107,29 @@ const VenueManager = () => {
         </div>
 
         {/* Tabs */}
-        <div className="w-full border-text/30 bg-secondary/20 rounded-lg">
-          <div className="flex max-w-[300px] text-lg gap-1 border-text/30 bg-accent/10 shadow-sm mb-15">
+        <div className="flex bg-secondary/20 pt-6 px-2 mb-5 rounded-2xl">
+          <div className="mb-4 relative inline-block">
             <button
               onClick={() => setActiveTab("venues")}
-              className={`flex-1 cursor-pointer py-2 text-center font-medium shadow-md shadow-[#0b1d2b]/60 rounded-md transition-all duration-200 ${
-                activeTab === "venues"
-                  ? "bg-primary text-background"
-                  : "bg-gray-300 text-[#0b1d2b]/70 hover:text-background hover:bg-primary/60"
-              }`}
+              className="text-xl font-semibold text-text mb-1 cursor-pointer transition-colors duration-200 hover:text-primary"
             >
               Venues
             </button>
+            {activeTab === "venues" && (
+              <hr className="h-3 border-0 bg-primary rounded-br-2xl w-full" />
+            )}
+          </div>
+
+          <div className="mb-4 relative inline-block ml-8">
             <button
               onClick={() => setActiveTab("bookings")}
-              className={`flex-1 cursor-pointer py-2 text-center font-medium shadow-md shadow-[#0b1d2b]/60 rounded-md transition-all duration-200 ${
-                activeTab === "bookings"
-                  ? "bg-primary text-background"
-                  : "bg-gray-300 text-[#0b1d2b]/70 hover:text-background hover:bg-primary/60"
-              }`}
+              className="text-xl font-semibold text-text mb-1 cursor-pointer transition-colors duration-200 hover:text-primary"
             >
               Bookings
             </button>
+            {activeTab === "bookings" && (
+              <hr className="h-3 border-0 bg-primary rounded-br-2xl w-full" />
+            )}
           </div>
         </div>
 

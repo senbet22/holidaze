@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "react-day-picker/style.css";
 
 /* Color Palette*/
 @theme {
@@ -21,4 +22,32 @@
   --color-primary: #40c2e2;
   --color-secondary: #2b1e36;
   --color-accent: #96c8d4;
+}
+
+/* Reset Leaflet z-index issue. */
+.leaflet-container {
+  position: relative;
+  z-index: 0;
+}
+
+.rdp-root {
+  /* Colors */
+  --rdp-accent-color: var(--color-text);
+  --rdp-background-color: var(--color-accent);
+  --rdp-hover-color: var(--color-accent);
+  --rdp-range_middle-background-color: var(--color-neutral);
+  --rdp-range_middle-color: var(--color-accent);
+
+  /* Additional color customizations */
+  --rdp-today-color: var(--color-primary);
+  --rdp-selected-color: var(--color-background);
+  --rdp-selected-background-color: var(--color-primary);
+  --rdp-disabled-color: #999;
+  --rdp-outside-color: #ccc;
+
+  /* Range selection styling */
+  --rdp-range_start-color: var(--color-background);
+  --rdp-range_start-background-color: var(--color-primary);
+  --rdp-range_end-color: var(--color-background);
+  --rdp-range_end-background-color: var(--color-primary);
 }
