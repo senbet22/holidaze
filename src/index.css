@@ -32,7 +32,7 @@
 
 .rdp-root {
   /* Colors */
-  --rdp-accent-color: var(--color-text);
+  --rdp-accent-color: var(--color-primary);
   --rdp-background-color: var(--color-accent);
   --rdp-hover-color: var(--color-accent);
   --rdp-range_middle-background-color: var(--color-neutral);
@@ -42,8 +42,6 @@
   --rdp-today-color: var(--color-primary);
   --rdp-selected-color: var(--color-background);
   --rdp-selected-background-color: var(--color-primary);
-  --rdp-disabled-color: #999;
-  --rdp-outside-color: #ccc;
 
   /* Range selection styling */
   --rdp-range_start-color: var(--color-background);

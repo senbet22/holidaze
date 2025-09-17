@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets.mjs";
 import { getProfileBookings } from "../../API/profileService.mjs";
 import { getToday } from "../../utils/todayDate.mjs";
@@ -7,6 +8,7 @@ import { useDarkMode } from "../../hooks/useDarkMode";
 
 const UpcomingBookingsCard = () => {
   const { isDarkMode } = useDarkMode();
+  const navigate = useNavigate();
 
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,6 +24,7 @@ const UpcomingBookingsCard = () => {
             const venue = booking.venue || {};
             return {
               id: booking.id,
+              venueId: venue.id, // Add venue ID for navigation
               name: venue.name || "No venue name",
               location: venue.location || {},
               media: venue.media || [],
@@ -31,7 +34,6 @@ const UpcomingBookingsCard = () => {
               dateTo: booking.dateTo || booking.updated,
             };
           })
-          // Keep only future bookings
           .filter((b) => new Date(b.dateFrom) >= getToday());
 
         setBookings(flattened);
@@ -43,6 +45,12 @@ const UpcomingBookingsCard = () => {
     };
     fetchBookings();
   }, []);
+
+  const handleCardClick = (venueId) => {
+    if (venueId) {
+      navigate(`/venue/${venueId}`);
+    }
+  };
 
   return (
     <div className="rounded-lg min-h-52">
@@ -67,7 +75,14 @@ const UpcomingBookingsCard = () => {
             key={booking.id}
             tabIndex="0"
             aria-labelledby={`booking-${booking.id}-title`}
-            className="bg-background rounded-lg shadow-sm overflow-hidden shadow-text/30 hover:shadow-sm transition-shadow focus:outline-none focus:ring-2 focus:ring-primary"
+            className="bg-background rounded-lg shadow-sm overflow-hidden shadow-text/30 hover:shadow-sm transition-shadow focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
+            onClick={() => handleCardClick(booking.venueId)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleCardClick(booking.venueId);
+              }
+            }}
           >
             <div className="aspect-video overflow-hidden">
               <img

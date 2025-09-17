@@ -19,3 +19,12 @@ We specialize in unique dune-side venues that invite guests to unwind beneath st
 ## Auth
 
 - User Must create an with @stud.noroff.no or @noroff.no for a valid e-mail.
+
+## Resources - Third party apps
+
+- React Focus Lock (Used for accessibility on Modals)
+  https://www.npmjs.com/package/react-focus-lock
+
+- Embla Carousel
+
+-

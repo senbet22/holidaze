@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { assets } from "../assets/assets.mjs";
+import { assets } from "../../assets/assets.mjs";
 
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState("");

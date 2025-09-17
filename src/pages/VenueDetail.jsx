@@ -72,9 +72,9 @@ const VenueDetail = () => {
             <ReserveButton
               className="ml-auto"
               onClick={() => {
-                document.getElementById("booking-section")?.scrollIntoView({
-                  behavior: "smooth",
-                });
+                document
+                  .getElementById("booking-heading")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             />
           </div>
@@ -157,7 +157,7 @@ const VenueDetail = () => {
         >
           <h2
             id="booking-heading"
-            className="text-2xl sm:text-3xl font-medium text-text text-center my-4 mb-10"
+            className="text-2xl sm:text-3xl font-medium text-text text-center my-4 mb-10 scroll-mt-32"
           >
             Booking
           </h2>

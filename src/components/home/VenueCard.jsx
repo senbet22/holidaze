@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { assets } from "../assets/assets.mjs";
-import { useDarkMode } from "../hooks/useDarkMode";
+import { assets } from "../../assets/assets.mjs";
+import { useDarkMode } from "../../hooks/useDarkMode";
 
 const VenueCard = ({ venue }) => {
   const { isDarkMode } = useDarkMode();

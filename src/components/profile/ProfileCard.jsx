@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { updateProfile } from "../../API/profileService.mjs";
 import { assets } from "../../assets/assets.mjs";
 import { useDarkMode } from "../../hooks/useDarkMode";
+import FocusLock from "react-focus-lock";
 
 const ProfileCard = () => {
   const { isDarkMode } = useDarkMode();
@@ -95,64 +96,66 @@ const ProfileCard = () => {
       <p className="text-text text-sm leading-relaxed">{profile.bio}</p>
 
       {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-secondary rounded-lg p-6 w-full max-w-md relative">
-            <button
-              className="absolute top-2 right-2 text-text text-lg font-bold"
-              onClick={() => setIsModalOpen(false)}
-            >
-              <img
-                src={isDarkMode ? assets.cross_icon_white : assets.cross_icon}
-                className="size-6 cursor-pointer"
-                alt="Close Icon"
-              />
-            </button>
+      <FocusLock>
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-secondary rounded-lg p-6 w-full max-w-md relative">
+              <button
+                className="absolute top-2 right-2 text-text text-lg font-bold"
+                onClick={() => setIsModalOpen(false)}
+              >
+                <img
+                  src={isDarkMode ? assets.cross_icon_white : assets.cross_icon}
+                  className="size-6 cursor-pointer"
+                  alt="Close Icon"
+                />
+              </button>
 
-            <h3 className="text-lg font-semibold mb-4 text-text">
-              Edit Profile
-            </h3>
+              <h3 className="text-lg font-semibold mb-4 text-text">
+                Edit Profile
+              </h3>
 
-            <div className="mb-4">
-              <label className="block text-text mb-1">Bio</label>
-              <textarea
-                value={bio}
-                rows={3}
-                onChange={(e) => setBio(e.target.value)}
-                className="w-full p-2 rounded border border-gray-300 bg-background text-text"
-              />
+              <div className="mb-4">
+                <label className="block text-text mb-1">Bio</label>
+                <textarea
+                  value={bio}
+                  rows={3}
+                  onChange={(e) => setBio(e.target.value)}
+                  className="w-full p-2 rounded border border-gray-300 bg-background text-text"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label className="block text-text mb-1">Avatar URL</label>
+                <input
+                  type="text"
+                  value={avatarUrl}
+                  onChange={(e) => setAvatarUrl(e.target.value)}
+                  className="w-full p-2 rounded border border-gray-300 bg-background text-text"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label className="block text-text mb-1">Avatar Alt</label>
+                <input
+                  type="text"
+                  value={avatarAlt}
+                  onChange={(e) => setAvatarAlt(e.target.value)}
+                  className="w-full p-2 rounded border border-gray-300 bg-background text-text"
+                />
+              </div>
+
+              <button
+                onClick={handleSave}
+                disabled={loading}
+                className="bg-primary text-text cursor-pointer px-4 py-2 rounded hover:bg-primary/90 transition-colors"
+              >
+                {loading ? "Saving..." : "Save Changes"}
+              </button>
             </div>
-
-            <div className="mb-4">
-              <label className="block text-text mb-1">Avatar URL</label>
-              <input
-                type="text"
-                value={avatarUrl}
-                onChange={(e) => setAvatarUrl(e.target.value)}
-                className="w-full p-2 rounded border border-gray-300 bg-background text-text"
-              />
-            </div>
-
-            <div className="mb-4">
-              <label className="block text-text mb-1">Avatar Alt</label>
-              <input
-                type="text"
-                value={avatarAlt}
-                onChange={(e) => setAvatarAlt(e.target.value)}
-                className="w-full p-2 rounded border border-gray-300 bg-background text-text"
-              />
-            </div>
-
-            <button
-              onClick={handleSave}
-              disabled={loading}
-              className="bg-primary text-text cursor-pointer px-4 py-2 rounded hover:bg-primary/90 transition-colors"
-            >
-              {loading ? "Saving..." : "Save Changes"}
-            </button>
           </div>
-        </div>
-      )}
+        )}
+      </FocusLock>
     </div>
   );
 };

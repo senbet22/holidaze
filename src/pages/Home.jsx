@@ -1,5 +1,5 @@
-import VenueCard from "../components/VenueCard";
-import SearchBar from "../components/SearchBar";
+import VenueCard from "../components/home/VenueCard";
+import SearchBar from "../components/home/SearchBar";
 import LoadMoreButton from "../components/buttons/LoadMoreButton";
 import { useVenues } from "../hooks/useVenues.mjs";
 import VenueCardSkeleton from "../components/skeletons/VenueCardSkeleton";

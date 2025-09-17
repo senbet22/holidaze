@@ -27,7 +27,7 @@ const NavbarDropdown = ({ isDarkMode }) => {
         onClick={() => setIsOpen(!isOpen)}
         aria-haspopup="true"
         aria-expanded={isOpen}
-        className="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+        className="flex cursor-pointer items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
       >
         <span className="text-text font-medium">{username}</span>
         <img
@@ -51,7 +51,7 @@ const NavbarDropdown = ({ isDarkMode }) => {
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               `hover:text-primary cursor-pointer py-2 px-2 rounded transition-colors ${
-                isActive ? "bg-secondary" : "hover:bg-gray-50"
+                isActive ? "bg-secondary" : "hover:bg-background"
               }`
             }
           >
