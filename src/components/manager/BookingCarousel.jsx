@@ -34,17 +34,18 @@ const BookingCarousel = ({ bookings, venue }) => {
   }, [embla, onSelect]);
 
   return (
-    <div className="relative bg-secondary/20 px-2 rounded-lg ">
+    <div className="relative bg-secondary/20 px-2 rounded-lg">
       {/* Arrows */}
       {canScrollPrev && (
         <button
           onClick={scrollPrev}
           className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-secondary/70 hover:bg-secondary cursor-pointer text-text rounded-full p-2 shadow-md"
+          aria-label="Scroll previous bookings"
         >
           <img
             src={isDarkMode ? assets.dropdown_icon_white : assets.dropdown_icon}
             className="rotate-90"
-            alt=""
+            alt="Previous Button"
           />
         </button>
       )}
@@ -52,11 +53,12 @@ const BookingCarousel = ({ bookings, venue }) => {
         <button
           onClick={scrollNext}
           className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-secondary/70 hover:bg-secondary cursor-pointer text-text rounded-full p-2 shadow-md"
+          aria-label="Scroll next bookings"
         >
           <img
             src={isDarkMode ? assets.dropdown_icon_white : assets.dropdown_icon}
             className="-rotate-90"
-            alt=""
+            alt="Next Button"
           />
         </button>
       )}
@@ -65,9 +67,18 @@ const BookingCarousel = ({ bookings, venue }) => {
       <div className="overflow-hidden py-2" ref={emblaRef}>
         <div className="flex gap-4">
           {bookings.map((booking) => (
-            <div className="flex-shrink-0" key={booking.id}>
-              <UpcomingBookingsCard booking={booking} venue={venue} />
-            </div>
+            <article
+              key={booking.id}
+              className="flex-shrink-0 outline-none focus:ring-2 focus:ring-primary rounded"
+              tabIndex="0"
+              aria-labelledby={`booking-${booking.id}-title`}
+            >
+              <UpcomingBookingsCard
+                booking={booking}
+                venue={venue}
+                id={`booking-${booking.id}-title`}
+              />
+            </article>
           ))}
         </div>
       </div>

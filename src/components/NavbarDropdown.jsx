@@ -17,18 +17,19 @@ const NavbarDropdown = ({ isDarkMode }) => {
         setIsOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <div
+      <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 cursor-pointer"
+        aria-haspopup="true"
+        aria-expanded={isOpen}
+        className="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
       >
-        <h1 className="text-text font-medium">{username}</h1>
+        <span className="text-text font-medium">{username}</span>
         <img
           className="w-8 h-8 rounded-full object-cover shadow-sm shadow-black"
           src={profileImage}
@@ -39,12 +40,12 @@ const NavbarDropdown = ({ isDarkMode }) => {
             isOpen ? "rotate-180" : ""
           }`}
           src={isDarkMode ? assets.dropdown_icon_white : assets.dropdown_icon}
-          alt="Dropdown Button"
+          alt="Dropdown Arrow"
         />
-      </div>
+      </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-3 min-w-48 bg-background rounded-lg shadow-lg flex flex-col  p-4 border z-20">
+        <div className="absolute top-full right-0 mt-3 min-w-48 bg-background rounded-lg shadow-lg flex flex-col p-4 border z-20">
           <NavLink
             to="/"
             onClick={() => setIsOpen(false)}
@@ -56,8 +57,9 @@ const NavbarDropdown = ({ isDarkMode }) => {
           >
             Home
           </NavLink>
+
           <hr className="border-accent" />
-          {/* Only shows if user is logged in */}
+
           <NavLink
             to="/profile"
             onClick={() => setIsOpen(false)}
@@ -69,12 +71,11 @@ const NavbarDropdown = ({ isDarkMode }) => {
           >
             My Profile
           </NavLink>
+
           <hr className="border-accent" />
 
-          {/* Only show if user is a Venue Manager */}
           {user?.venueManager && (
             <>
-              {" "}
               <NavLink
                 to="/venueManager"
                 onClick={() => setIsOpen(false)}
@@ -90,15 +91,15 @@ const NavbarDropdown = ({ isDarkMode }) => {
             </>
           )}
 
-          <p
+          <button
             onClick={() => {
               setIsOpen(false);
               logout();
             }}
-            className="hover:text-primary cursor-pointer py-2 px-2 rounded hover:bg-gray-50 transition-colors"
+            className="text-left hover:text-primary cursor-pointer py-2 px-2 rounded hover:bg-gray-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             Logout
-          </p>
+          </button>
         </div>
       )}
     </div>

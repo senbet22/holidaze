@@ -39,119 +39,149 @@ const VenueDetail = () => {
   };
 
   return (
-    <div className="bg-background ">
-      <div className="max-w-6xl mx-auto py-25  bg-background text-text shadow-sm">
-        <h1 className="text-xl pt-12 mb-4 mx-2 sm:font-semibold font-bold  line-clamp-2 break-words">
-          {venue.name}
-        </h1>
+    <article className="bg-background">
+      <div className="max-w-6xl mx-auto mt-20 py-10 bg-background text-text shadow-sm">
+        <header>
+          <h1 className="text-xl pt-12 mb-4 mx-2 sm:font-semibold font-bold line-clamp-2 break-words">
+            {venue.name}
+          </h1>
 
-        <div className="flex items-center mx-2 text-lg  gap-4 mb-4 ">
-          <span className="flex items-center ">
-            <img
-              src={
-                isDarkMode ? assets.location_icon_white : assets.location_icon
-              }
-              alt="Location Icon"
-              className="size-5"
-            />
-            {venue.location.city}, {venue.location.country}
-          </span>
-          {venue.rating > 0 && (
-            <span className="flex items-center ">
-              <img src={assets.star_icon} alt="Star Icon" className="w-4 h-4" />
-              {venue.rating}
-            </span>
-          )}
-          <ReserveButton
-            className={" ml-auto"}
-            onClick={() => {
-              document.getElementById("booking-section")?.scrollIntoView({
-                behavior: "smooth",
-              });
-            }}
-          />
-        </div>
-
-        <div className=" grid grid-cols-1 md:grid-cols-2 gap-2 ">
-          {/* Image Carousel */}
-          <div className="w-full mx-auto px-2">
-            <ImageCarousel
-              images={venue.media}
-              isDarkMode={isDarkMode}
-              assets={assets}
-            />
-          </div>
-
-          {/* Leaflet Map */}
-          <div className="mx-2">
-            <LocationMap
-              lat={venue.location.lat ?? -50.6042}
-              lng={venue.location.lng ?? 165.973}
-            />
-          </div>
-        </div>
-
-        <div className="my-6 mx-2">
-          <h2 className="text-xl font-semibold mb-4">About this venue</h2>
-          <p className="">{venue.description}</p>
-          <div className="my-6">
-            <h2 className="text-xl font-semibold mb-2">Capacity</h2>
-            <p>Maximum {venue.maxGuests} guests</p>
-          </div>
-        </div>
-
-        <div className="my-6 mx-2 grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <div className="text-xl flex items-baseline gap-2 font-semibold mb-2">
+          <div className="flex items-center mx-2 text-lg gap-4 mb-4">
+            <address className="flex items-center not-italic">
               <img
                 src={
                   isDarkMode ? assets.location_icon_white : assets.location_icon
                 }
-                alt="Location icon"
-                className=" size-5"
+                alt="Location Icon"
+                className="size-5"
               />
-              <p>Location</p>
-            </div>
-            <p className="mb-1">{venue.location.address}</p>
-            <p className="mb-1">
-              {venue.location.city}, {venue.location.zip}
-            </p>
-            <p className="mb-4">
-              {venue.location.country}, {venue.location.continent}
-            </p>
+              {venue.location.city}, {venue.location.country}
+            </address>
+            {venue.rating > 0 && (
+              <div className="flex items-center">
+                <img
+                  src={assets.star_icon}
+                  alt="Star Icon"
+                  className="w-4 h-4"
+                />
+                <span aria-label={`Rating: ${venue.rating} stars`}>
+                  {venue.rating}
+                </span>
+              </div>
+            )}
+            <ReserveButton
+              className="ml-auto"
+              onClick={() => {
+                document.getElementById("booking-section")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+            />
           </div>
+        </header>
 
-          {/* Features */}
-          <VenueFeatures
-            meta={venue.meta}
-            isDarkMode={isDarkMode}
-            assets={assets}
-          />
-        </div>
+        <section aria-label="Venue images and location">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {/* Image Carousel */}
+            <div className="w-full mx-auto px-2">
+              <ImageCarousel
+                images={venue.media}
+                isDarkMode={isDarkMode}
+                assets={assets}
+              />
+            </div>
 
-        <div
+            {/* Leaflet Map */}
+            <div className="mx-2">
+              <LocationMap
+                lat={venue.location.lat ?? -50.6042}
+                lng={venue.location.lng ?? 165.973}
+              />
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="about-heading">
+          <div className="my-6 mx-2">
+            <h2 id="about-heading" className="text-xl font-semibold mb-4">
+              About this venue
+            </h2>
+            <p>{venue.description}</p>
+
+            <div className="my-6">
+              <h3 className="text-xl font-semibold mb-2">Capacity</h3>
+              <p>Maximum {venue.maxGuests} guests</p>
+            </div>
+          </div>
+        </section>
+
+        <section aria-label="Venue details">
+          <div className="my-6 mx-2 grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <h3 className="text-xl flex items-baseline gap-2 font-semibold mb-2">
+                <img
+                  src={
+                    isDarkMode
+                      ? assets.location_icon_white
+                      : assets.location_icon
+                  }
+                  alt="Location icon"
+                  className="size-5"
+                />
+                Location
+              </h3>
+              <address className="not-italic">
+                <p className="mb-1">{venue.location.address}</p>
+                <p className="mb-1">
+                  {venue.location.city}, {venue.location.zip}
+                </p>
+                <p className="mb-4">
+                  {venue.location.country}, {venue.location.continent}
+                </p>
+              </address>
+            </div>
+
+            {/* Features */}
+            <VenueFeatures
+              meta={venue.meta}
+              isDarkMode={isDarkMode}
+              assets={assets}
+            />
+          </div>
+        </section>
+
+        <section
           id="booking-section"
+          aria-labelledby="booking-heading"
           className="w-full h-auto sm:p-2 bg-linear-to-b from-20% from-primary/70 to-70% to-secondary py-5"
         >
-          <h1 className="text-2xl sm:text-3xl font-medium text-text text-center my-4 mb-10">
+          <h2
+            id="booking-heading"
+            className="text-2xl sm:text-3xl font-medium text-text text-center my-4 mb-10"
+          >
             Booking
-          </h1>
-          {/* Booking Section */}
+          </h2>
           <BookingCalendar
             venueId={venue.id}
             maxGuests={venue.maxGuests}
             price={venue.price}
             existingBookings={venue.bookings}
           />
-        </div>
+        </section>
 
         <div className="text-sm p-2 text-text mt-8">
           <p>Venue ID: {venue.id}</p>
-          <p>Added: {formatDate(venue.created)}</p>
-          <p>Last updated: {formatDate(venue.updated)}</p>
+          <p>
+            Added:{" "}
+            <time dateTime={venue.created}>{formatDate(venue.created)}</time>
+          </p>
+          <p>
+            Last updated:{" "}
+            <time dateTime={venue.updated}>{formatDate(venue.updated)}</time>
+          </p>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

@@ -28,7 +28,7 @@ const Home = () => {
     // Empty state
     if (venues.length === 0) {
       return (
-        <div className="flex w-full justify-start items-center my-25">
+        <div className="flex w-full justify-start items-center">
           <img src={assets.no_venue_found} alt="No Venue Found" />
         </div>
       );
@@ -50,26 +50,33 @@ const Home = () => {
       </div>
     );
   };
+
   return (
-    <div className="flex flex-col justify-between p-2  mt-10 pb-25  pt-14 bg-background">
-      <div className="x-2">
-        <SearchBar onSearch={handleSearch} />
-      </div>
+    <div className="min-h-screen bg-background pt-20 pb-8">
+      {/* Header Section */}
+      <section className="pt-20 pb-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <SearchBar onSearch={handleSearch} />
 
-      <div className="max-w-6xl mx-auto w-full mt-10">
-        <h1 className="text-text text-xl">Venues</h1>
-        <hr className="bg-primary border-0 h-3 w-15 rounded-br-full" />
-      </div>
+          <div className="mt-10">
+            <h1 className="text-text text-xl">Venues</h1>
+            <hr className="bg-primary border-0 h-3 w-15 rounded-br-full" />
+          </div>
+        </div>
+      </section>
 
-      {/* grid container */}
-      <div className="mt-6 max-w-6xl mx-auto w-full">
-        {error ? (
-          <p className="text-center w-full text-red-500">{error}</p>
-        ) : (
-          renderVenueGrid()
-        )}
-      </div>
+      {/* Venues Grid Section */}
+      <section className="pb-8">
+        <div className="max-w-6xl mx-auto px-4">
+          {error ? (
+            <p className="text-center w-full text-red-500">{error}</p>
+          ) : (
+            renderVenueGrid()
+          )}
+        </div>
+      </section>
 
+      {/* Load More Section */}
       <LoadMoreButton
         onClick={loadMore}
         isLoading={isLoading}

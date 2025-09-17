@@ -1,22 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { assets } from "../assets/assets.mjs";
 import { useDarkMode } from "../hooks/useDarkMode";
 
 const VenueCard = ({ venue }) => {
+  const { isDarkMode } = useDarkMode();
   const currencySymbol = "$";
 
-  const { isDarkMode } = useDarkMode();
-
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(`/venue/${venue.id}`);
-  };
-
   return (
-    <div
-      onClick={handleClick}
-      className="flex relative bg-background shadow-sm hover:shadow-text shadow-text/30  flex-col w-full rounded-xl overflow-hidden cursor-pointer"
+    <Link
+      to={`/venue/${venue.id}`}
+      className="flex relative bg-background shadow-sm hover:shadow-text shadow-text/30 flex-col w-full rounded-xl overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
     >
       <img
         className="object-cover w-full h-88 sm:h-56"
@@ -26,7 +19,7 @@ const VenueCard = ({ venue }) => {
         alt={venue.media?.length > 0 ? venue.media[0].alt : "No venue image"}
         onError={(e) => {
           e.currentTarget.src = assets.no_image_found;
-          e.currentTarget.onerror = null; 
+          e.currentTarget.onerror = null;
         }}
       />
 
@@ -34,6 +27,7 @@ const VenueCard = ({ venue }) => {
         <h2 className="text-lg mb-0 font-semibold p-1 truncate">
           {venue.name}
         </h2>
+
         <div className="flex justify-between">
           <p className="text-lg font-medium text-accent">
             {currencySymbol}
@@ -53,6 +47,7 @@ const VenueCard = ({ venue }) => {
             <p className="flex mx-2 text-lg text-primary">✨New</p>
           )}
         </div>
+
         <div>
           <p className="flex truncate mt-2 text-text">
             <img
@@ -66,7 +61,7 @@ const VenueCard = ({ venue }) => {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

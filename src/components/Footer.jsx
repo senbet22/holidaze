@@ -6,7 +6,7 @@ const Footer = () => {
   const { isDarkMode } = useDarkMode();
 
   return (
-    <div className="bg-primary">
+    <footer className="bg-primary">
       <div className="md:mx-10 mx-4 sm:mx-[10%]">
         <div className="flex flex-col md:grid grid-cols-[3fr_1fr_1fr] gap-14 py-10 text-base text-[-0b1d2b]">
           {/* Left section */}
@@ -60,7 +60,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

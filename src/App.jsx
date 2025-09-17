@@ -9,33 +9,36 @@ import Footer from "./components/Footer";
 import ProtectedRoute from "./context/ProtectedRoute";
 import VenueManager from "./pages/VenueManager";
 import ScrollToTop from "./components/routing/ScrollToTop";
+
 function App() {
   return (
     <>
       <Navbar />
       <ToastContainer theme="dark" />
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/venue/:id" element={<VenueDetail />} />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/venuemanager"
-          element={
-            <ProtectedRoute requireVenueManager={true}>
-              <VenueManager />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/venue/:id" element={<VenueDetail />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/venuemanager"
+            element={
+              <ProtectedRoute requireVenueManager={true}>
+                <VenueManager />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </main>
       <Footer />
     </>
   );

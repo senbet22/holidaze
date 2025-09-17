@@ -2,15 +2,26 @@ import { assets } from "../../assets/assets.mjs";
 import { useDarkMode } from "../../hooks/useDarkMode";
 
 const AddVenueCard = ({ onClick }) => {
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   return (
     <div
+      role="button"
+      tabIndex="0"
       onClick={onClick}
-      className="flex relative bg-secondary shadow-sm hover:shadow-text shadow-text/30 flex-col w-full rounded-xl overflow-hidden cursor-pointer border-2 border-dashed border-text hover:border-blue-400 transition-all duration-200"
+      onKeyDown={handleKeyPress}
+      aria-label="Add a new venue"
+      className="flex relative bg-secondary shadow-sm hover:shadow-text shadow-text/30 flex-col w-full rounded-xl overflow-hidden cursor-pointer border-2 border-dashed border-text hover:border-blue-400 transition-all duration-200 outline-none focus:ring-2 focus:ring-primary"
     >
       <div className="flex-1 flex items-center justify-center h-88 sm:h-56">
         <div className="text-center">
           <div className="mb-4">
-            <div className="size-14 bg-primary text-[#040605] rounded mx-auto flex items-center justify-center  text-5xl font-bold">
+            <div className="size-14 bg-primary text-[#040605] rounded mx-auto flex items-center justify-center text-5xl font-bold">
               +
             </div>
           </div>
@@ -59,7 +70,11 @@ const ManagerVenueCard = ({ venue, onEdit, onDelete }) => {
             ${venue.price}/night
           </p>
           <p className="flex mx-2 text-lg ">
-            <img src={assets.star_icon} alt="" className="w-5 h-7 mx-1" />
+            <img
+              src={assets.star_icon}
+              alt="Star Icon"
+              className="w-5 h-7 mx-1"
+            />
             {venue.rating || 0}
           </p>
         </div>
@@ -70,7 +85,7 @@ const ManagerVenueCard = ({ venue, onEdit, onDelete }) => {
                 isDarkMode ? assets.location_icon_white : assets.location_icon
               }
               className="w-5 h-6 mr-1"
-              alt=""
+              alt="Location Icon"
             />
             {venue.location?.city}, {venue.location?.country}
           </p>

@@ -119,7 +119,7 @@ const VenueMediaForm = ({ media, setMedia }) => {
                     <img
                       src={assets.cross_icon}
                       className="rounded-md"
-                      alt=""
+                      alt="Close Icon"
                     />
                   </button>
                   {photo.alt && (

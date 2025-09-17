@@ -97,14 +97,14 @@ const VenueManager = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-2">
-      <div className="max-w-6xl mx-auto my-25">
+    <div className="min-h-screen bg-background p-4">
+      <div className="max-w-6xl mx-auto my-20">
         {/* Header */}
-        <div className="flex justify-between items-center mb-8">
+        <header className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-medium text-text">
             Manage Your Venues ✨
           </h1>
-        </div>
+        </header>
 
         {/* Tabs */}
         <div className="flex bg-secondary/20 pt-6 px-2 mb-5 rounded-2xl">
@@ -148,7 +148,6 @@ const VenueManager = () => {
               />
             )}
 
-            {/* Delete Modal */}
             <ConfirmDeleteModal
               isOpen={deleteModalOpen}
               onClose={() => setDeleteModalOpen(false)}
@@ -166,11 +165,17 @@ const VenueManager = () => {
               );
 
               return (
-                <div key={venue.id}>
-                  <h3 className="text-lg relative font-semibold text-text mb-3">
+                <section
+                  key={venue.id}
+                  aria-labelledby={`venue-${venue.id}-title`}
+                >
+                  <h2
+                    id={`venue-${venue.id}-title`}
+                    className="text-lg font-semibold text-text mb-3"
+                  >
                     {venue.name}
-                    <hr className="w-full rounded-2xl border-2 border-primary " />
-                  </h3>
+                  </h2>
+                  <hr className="w-full rounded-2xl border-2 border-primary" />
                   {futureBookings.length > 0 ? (
                     <BookingCarousel bookings={futureBookings} venue={venue} />
                   ) : (
@@ -178,14 +183,13 @@ const VenueManager = () => {
                       No upcoming bookings
                     </p>
                   )}
-                </div>
+                </section>
               );
             })}
           </div>
         )}
       </div>
 
-      {/* Create/Edit Modal */}
       <CreateVenueModal
         isOpen={isModalOpen}
         onClose={() => {

@@ -105,7 +105,7 @@ const ProfileCard = () => {
               <img
                 src={isDarkMode ? assets.cross_icon_white : assets.cross_icon}
                 className="size-6 cursor-pointer"
-                alt=""
+                alt="Close Icon"
               />
             </button>
 

@@ -27,7 +27,7 @@ const Navbar = () => {
   }, [mobileMenu]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 h-[60px] sm:h-[70px] content-center bg-secondary text-text shadow-md">
+    <nav className="fixed top-0 left-0 w-full z-50 h-[80px] content-center bg-secondary text-text shadow-md">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <HomeLink to="/">
@@ -47,26 +47,27 @@ const Navbar = () => {
                   ? assets.dunestay_logo_text_dark
                   : assets.dunestay_logo_text
               }
-              alt=""
+              alt="Dunestay Logo Text"
             />
           </div>
         </HomeLink>
-
-        <div
-          title="Dark Mode Toggle"
+        {/* Dark mode Toggle */}
+        <button
           onClick={toggleDarkMode}
-          className="ml-auto mx-6 hidden md:flex w-12 bg-accent shadow-sm shadow-black rounded-full  justify-between cursor-pointer"
+          aria-label="Toggle dark mode"
+          className="ml-auto mx-6 hidden md:flex w-12 bg-accent shadow-sm shadow-black rounded-full justify-between cursor-pointer 
+             focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
           <div className={`${isDarkMode ? "ml-auto" : "mr-auto"}`}>
             <img
-              className="w-6 "
+              className="w-6"
               src={
                 isDarkMode ? assets.dunestay_logo : assets.dunestay_dark_logo
               }
               alt="Toggle Dark Mode"
             />
           </div>
-        </div>
+        </button>
 
         <div className="hidden md:flex items-center gap-4 mr-2">
           {!isAuthenticated() ? (
@@ -96,10 +97,11 @@ const Navbar = () => {
           <div className="md:hidden fixed w-full top-0 bottom-0 z-40 overflow-hidden bg-gradient-to-b from-primary  to-secondary transition-all flex flex-col">
             <div className="flex justify-end p-4">
               {/* Dark Mode Toggle */}
-              <div
-                title="Dark Mode Toggle"
+              <button
                 onClick={toggleDarkMode}
-                className=" mx-4 mr-auto md:flex w-15 bg-primary shadow-sm shadow-black rounded-full flex justify-between cursor-pointer"
+                aria-label="Toggle dark mode"
+                className="mx-4 mr-auto md:flex w-15 bg-primary shadow-sm shadow-black rounded-full flex justify-between cursor-pointer 
+             focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 <div className={`${isDarkMode ? "ml-auto" : "mr-auto"}`}>
                   <img
@@ -112,7 +114,7 @@ const Navbar = () => {
                     alt="Toggle Dark Mode"
                   />
                 </div>
-              </div>
+              </button>
 
               {/* Menu Icon */}
               <img
