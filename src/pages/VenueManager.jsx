@@ -98,6 +98,7 @@ const VenueManager = () => {
 
   return (
     <div className="min-h-screen bg-background p-4">
+      <title>VenueManager</title>
       <div className="max-w-6xl mx-auto my-20">
         {/* Header */}
         <header className="flex justify-between items-center mb-8">

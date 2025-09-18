@@ -73,6 +73,7 @@ const Auth = () => {
       aria-label={state === "Sign Up" ? "Sign Up Form" : "Login Form"}
       className="py-10 flex items-center h-svh bg-linear-to-b from-20% from-primary/70 to-70% to-secondary"
     >
+      <title>Auth</title>
       <div className="flex flex-col bg-secondary text-text gap-3 m-auto items-start p-8 min-w-[300px] sm:min-w-96 border rounded-xl text-sm shadow-lg">
         <header className="flex items-center gap-4">
           <h1 className="text-2xl font-semibold">

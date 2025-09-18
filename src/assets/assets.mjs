@@ -21,6 +21,7 @@ import menu_icon from "./menu_icon.svg";
 import menu_icon_white from "./menu_icon_white.svg";
 import check_icon from "./check_icon.svg";
 import star_icon from "./star_icon.svg";
+import stars_icon from "./stars_icon.svg";
 import location_icon from "./location_icon.svg";
 import location_icon_white from "./location_icon_white.svg";
 import dropdown_icon from "./dropdown_icon.svg";
@@ -53,6 +54,7 @@ export const assets = {
   menu_icon,
   menu_icon_white,
   star_icon,
+  stars_icon,
   location_icon,
   location_icon_white,
   dropdown_icon,

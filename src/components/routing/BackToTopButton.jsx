@@ -22,7 +22,7 @@ export default function BackToTopButton() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 z-50 p-3 cursor-pointer rounded-full bg-amber-500/70 shadow-sm hover:bg-amber-500 focus:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-300 shadow-primary transition-opacity duration-300 ${
+      className={`fixed bottom-6 right-6 z-50 p-2 px-4 cursor-pointer rounded-full bg-amber-500/70 shadow-sm hover:bg-amber-500 focus:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-300 shadow-gray-500 transition-opacity duration-300 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
       aria-label="Scroll back to top of page"
@@ -31,7 +31,7 @@ export default function BackToTopButton() {
     >
       <img
         src={isDarkMode ? assets.dropdown_icon_white : assets.dropdown_icon}
-        className="rotate-180"
+        className="rotate-180 size-10"
         alt=""
         role="presentation"
       />

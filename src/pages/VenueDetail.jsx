@@ -40,12 +40,13 @@ const VenueDetail = () => {
 
   return (
     <article className="bg-background">
+      {/* Dynamic page title */}
+      <title>{venue.name}</title>
       <div className="max-w-6xl mx-auto mt-20 py-10 bg-background text-text shadow-sm">
         <header>
           <h1 className="text-xl pt-12 mb-4 mx-2 sm:font-semibold font-bold line-clamp-2 break-words">
             {venue.name}
           </h1>
-
           <div className="flex items-center mx-2 text-lg gap-4 mb-6">
             <address className="flex items-center not-italic">
               <img

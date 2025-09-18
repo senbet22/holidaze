@@ -27,4 +27,5 @@ We specialize in unique dune-side venues that invite guests to unwind beneath st
 
 - Embla Carousel
 
--
+- Update titles dynamically.
+  https://www.npmjs.com/package/react-helmet-async

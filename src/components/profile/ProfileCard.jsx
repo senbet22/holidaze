@@ -71,6 +71,7 @@ const ProfileCard = () => {
 
   return (
     <div className="bg-secondary rounded-lg p-4 min-h-52 relative">
+      <title>{profile.name}</title>
       <button
         className="absolute top-0 right-0 cursor-pointer bg-primary text-text px-4 py-2 rounded text-base hover:bg-primary/90 transition-colors"
         onClick={() => setIsModalOpen(true)}
