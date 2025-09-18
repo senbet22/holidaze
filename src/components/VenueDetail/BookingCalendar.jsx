@@ -97,7 +97,7 @@ function BookingCalendar({ venueId, maxGuests, price, existingBookings = [] }) {
   };
 
   return (
-    <div className="bg-background px-2 text-text font-medium  rounded-lg shadow-md w-fit">
+    <div className="bg-background px-2 mx-auto  sm:mx-2 text-text font-medium  rounded-lg shadow-md w-fit">
       <p className=" text-xl py-4 text-accent">${price} Per Night</p>
       <DayPicker
         mode="range"
@@ -117,10 +117,11 @@ function BookingCalendar({ venueId, maxGuests, price, existingBookings = [] }) {
       />
 
       <div className="mt-4">
-        <label className="block font-semibold text-text">
+        <label htmlFor="guest-count" className="block font-semibold text-text">
           No. of Guests (Max: {maxGuests})
         </label>
         <input
+          id="guest-count"
           type="number"
           min="1"
           max={maxGuests}

@@ -39,7 +39,7 @@
   --rdp-range_middle-color: var(--color-accent);
 
   /* Additional color customizations */
-  --rdp-today-color: var(--color-primary);
+  --rdp-today-color: var(--color-amber-600);
   --rdp-selected-color: var(--color-background);
   --rdp-selected-background-color: var(--color-primary);
 

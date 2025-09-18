@@ -21,28 +21,22 @@ const Footer = () => {
               />
             </NavLink>
 
-            <p className="w-full md:w2/3 leading-6">
+            <p className="w-full md:w-2/3 leading-6">
               Welcome to Dunestay, where the magic of the desert meets
-              unforgettable stays. We specialize in unique dune-side venues that
-              invite guests to unwind beneath starfilled skies. Our mission is
-              simple: to connect travelers and hosts through serene desert
-              escapes designed for wonder, warmth, and adventure.
+              unforgettable stays. Unique dune-side venues, starry skies, and
+              warm escapes designed for wonder and adventure.
             </p>
           </div>
-          {/* Center section */}
-          <div>
-            <p className="text-xl font-medium mb-5">COMPANY</p>
-            <ul className="flex text-lg flex-col gap-2">
-              <li>
-                <NavLink to="/" className="hover:text-text transition">
-                  Home
-                </NavLink>
-              </li>
-              <li>About Us</li>
-              <li>Contact Us</li>
-              <li>Privacy Policy</li>
-            </ul>
+
+          {/* Center section — replaced COMPANY links */}
+          <div className="flex flex-col items-start">
+            <p className="text-xl font-medium mb-5">OUR PROMISE</p>
+            <p className="text-lg leading-6 ">
+              Creating meaningful stays that feel personal, sustainable, and
+              unforgettable.
+            </p>
           </div>
+
           {/* Right section */}
           <div>
             <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
@@ -52,6 +46,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
         {/* Copyright Text */}
         <div>
           <hr className=" text-[-0b1d2b]" />

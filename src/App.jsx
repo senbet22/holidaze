@@ -9,12 +9,14 @@ import Footer from "./components/Footer";
 import ProtectedRoute from "./context/ProtectedRoute";
 import VenueManager from "./pages/VenueManager";
 import ScrollToTop from "./components/routing/ScrollToTop";
+import BackToTopButton from "./components/routing/BackToTopButton";
 
 function App() {
   return (
     <>
       <Navbar />
       <ToastContainer theme="dark" />
+      <BackToTopButton />
       <ScrollToTop />
       <main>
         <Routes>

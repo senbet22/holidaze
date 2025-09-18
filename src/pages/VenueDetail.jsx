@@ -46,7 +46,7 @@ const VenueDetail = () => {
             {venue.name}
           </h1>
 
-          <div className="flex items-center mx-2 text-lg gap-4 mb-4">
+          <div className="flex items-center mx-2 text-lg gap-4 mb-6">
             <address className="flex items-center not-italic">
               <img
                 src={
