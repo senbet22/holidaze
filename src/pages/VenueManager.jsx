@@ -11,6 +11,7 @@ import {
   deleteVenue,
   getProfileVenues,
 } from "../API/managerService.mjs";
+import { assets } from "../assets/assets.mjs";
 
 const VenueManager = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -97,112 +98,130 @@ const VenueManager = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-4">
-      <title>VenueManager</title>
-      <div className="max-w-6xl mx-auto my-20">
-        {/* Header */}
-        <header className="flex justify-between items-center mb-8">
-          <h1 className="text-2xl font-medium text-text">
-            Manage Your Venues ✨
-          </h1>
-        </header>
+    <>
+      <div className="min-h-screen bg-background mt-20 px-4">
+        <title>Dunestay - VenueManager</title>
+        <div className="max-w-6xl mx-auto py-20">
+          {/* Header */}
+          <header className="flex justify-between items-center mb-8">
+            <h1 className="text-2xl font-medium text-text">
+              Manage Your Venues ✨
+            </h1>
+          </header>
 
-        {/* Tabs */}
-        <div className="flex bg-secondary/20 pt-6 px-2 mb-5 rounded-2xl">
-          <div className="mb-4 relative inline-block">
-            <button
-              onClick={() => setActiveTab("venues")}
-              className="text-xl font-semibold text-text mb-1 cursor-pointer transition-colors duration-200 hover:text-primary"
-            >
-              Venues
-            </button>
-            {activeTab === "venues" && (
-              <hr className="h-3 border-0 bg-primary rounded-br-2xl w-full" />
-            )}
+          {/* Tabs */}
+          <div className="flex bg-secondary/20 pt-6 px-2 mb-5 rounded-2xl">
+            <div className="mb-4 relative inline-block">
+              <button
+                onClick={() => setActiveTab("venues")}
+                className="text-xl font-semibold text-text mb-1 cursor-pointer transition-colors duration-200 hover:text-primary"
+              >
+                Venues
+              </button>
+              {activeTab === "venues" && (
+                <hr className="h-3 border-0 bg-primary rounded-br-2xl w-full" />
+              )}
+            </div>
+
+            <div className="mb-4 relative inline-block ml-8">
+              <button
+                onClick={() => setActiveTab("bookings")}
+                className="text-xl font-semibold text-text mb-1 cursor-pointer transition-colors duration-200 hover:text-primary"
+              >
+                Bookings
+              </button>
+              {activeTab === "bookings" && (
+                <hr className="h-3 border-0 bg-primary rounded-br-2xl w-full" />
+              )}
+            </div>
           </div>
 
-          <div className="mb-4 relative inline-block ml-8">
-            <button
-              onClick={() => setActiveTab("bookings")}
-              className="text-xl font-semibold text-text mb-1 cursor-pointer transition-colors duration-200 hover:text-primary"
-            >
-              Bookings
-            </button>
-            {activeTab === "bookings" && (
-              <hr className="h-3 border-0 bg-primary rounded-br-2xl w-full" />
-            )}
-          </div>
+          {/* Tab Content */}
+          {activeTab === "venues" && (
+            <div>
+              {loading && <p className="text-text/70">Loading venues...</p>}
+              {error && <p className="text-red-500">Error: {error}</p>}
+
+              {!loading && !error && (
+                <ManagerVenueGrid
+                  venues={venues}
+                  onAddVenue={handleAddVenue}
+                  onEditVenue={handleEditClick}
+                  onDeleteVenue={handleDeleteClick}
+                />
+              )}
+
+              <ConfirmDeleteModal
+                isOpen={deleteModalOpen}
+                onClose={() => setDeleteModalOpen(false)}
+                onConfirm={handleConfirmDelete}
+                venueName={venueToDelete?.name}
+              />
+            </div>
+          )}
+
+          {/* Confirmed Bookings */}
+          {activeTab === "bookings" && (
+            <div className="space-y-8">
+              {venues
+                .map((venue) => ({
+                  ...venue,
+                  futureBookings: (venue.bookings || []).filter(
+                    (b) => new Date(b.dateFrom) >= getToday()
+                  ),
+                }))
+                .filter((venue) => venue.futureBookings.length > 0)
+                .map((venue) => (
+                  <section
+                    key={venue.id}
+                    aria-labelledby={`venue-${venue.id}-title`}
+                  >
+                    <h2
+                      id={`venue-${venue.id}-title`}
+                      className="text-lg font-semibold text-text mb-3"
+                    >
+                      {venue.name}
+                    </h2>
+                    <hr className="w-full rounded-2xl border-2 border-primary" />
+                    <BookingCarousel
+                      bookings={venue.futureBookings}
+                      venue={venue}
+                    />
+                  </section>
+                ))}
+
+              {/* If no venue has bookings display fallback Image. */}
+              {venues.every(
+                (venue) =>
+                  !(venue.bookings || []).some(
+                    (b) => new Date(b.dateFrom) >= getToday()
+                  )
+              ) && (
+                <div className="w-fit flex justify-center sm:justify-start ">
+                  <img
+                    src={assets.no_confirmed_bookings_found}
+                    alt="No confirmed bookings found"
+                    className="w-fit object-contain sm:max-w-xl"
+                  />
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
-        {/* Tab Content */}
-        {activeTab === "venues" && (
-          <div>
-            {loading && <p className="text-text/70">Loading venues...</p>}
-            {error && <p className="text-red-500">Error: {error}</p>}
-
-            {!loading && !error && (
-              <ManagerVenueGrid
-                venues={venues}
-                onAddVenue={handleAddVenue}
-                onEditVenue={handleEditClick}
-                onDeleteVenue={handleDeleteClick}
-              />
-            )}
-
-            <ConfirmDeleteModal
-              isOpen={deleteModalOpen}
-              onClose={() => setDeleteModalOpen(false)}
-              onConfirm={handleConfirmDelete}
-              venueName={venueToDelete?.name}
-            />
-          </div>
-        )}
-
-        {activeTab === "bookings" && (
-          <div className="space-y-8">
-            {venues.map((venue) => {
-              const futureBookings = (venue.bookings || []).filter(
-                (b) => new Date(b.dateFrom) >= getToday()
-              );
-
-              return (
-                <section
-                  key={venue.id}
-                  aria-labelledby={`venue-${venue.id}-title`}
-                >
-                  <h2
-                    id={`venue-${venue.id}-title`}
-                    className="text-lg font-semibold text-text mb-3"
-                  >
-                    {venue.name}
-                  </h2>
-                  <hr className="w-full rounded-2xl border-2 border-primary" />
-                  {futureBookings.length > 0 ? (
-                    <BookingCarousel bookings={futureBookings} venue={venue} />
-                  ) : (
-                    <p className="text-sm text-gray-500">
-                      No upcoming bookings
-                    </p>
-                  )}
-                </section>
-              );
-            })}
-          </div>
-        )}
+        <CreateVenueModal
+          isOpen={isModalOpen}
+          onClose={() => {
+            setIsModalOpen(false);
+            setEditingVenue(null);
+          }}
+          onCreateVenue={handleCreateVenue}
+          onEditVenue={handleEditVenue}
+          venueToEdit={editingVenue}
+          onSuccess={() => console.log("Venue created/edited successfully!")}
+        />
       </div>
-
-      <CreateVenueModal
-        isOpen={isModalOpen}
-        onClose={() => {
-          setIsModalOpen(false);
-          setEditingVenue(null);
-        }}
-        onCreateVenue={handleCreateVenue}
-        onEditVenue={handleEditVenue}
-        venueToEdit={editingVenue}
-        onSuccess={() => console.log("Venue created/edited successfully!")}
-      />
-    </div>
+    </>
   );
 };
 

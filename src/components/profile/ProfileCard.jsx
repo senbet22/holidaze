@@ -73,7 +73,7 @@ const ProfileCard = () => {
     <div className="bg-secondary rounded-lg p-4 min-h-52 relative">
       <title>{profile.name}</title>
       <button
-        className="absolute top-0 right-0 cursor-pointer bg-primary text-text px-4 py-2 rounded text-base hover:bg-primary/90 transition-colors"
+        className="absolute top-0 right-0 cursor-pointer bg-primary text-[#0b1d2b] px-4 py-2 rounded text-base hover:bg-primary/90 transition-colors"
         onClick={() => setIsModalOpen(true)}
       >
         Edit Profile
@@ -82,13 +82,13 @@ const ProfileCard = () => {
       <div className="flex items-start gap-4 my-6">
         <img
           src={profile.avatar}
-          alt={profile.name}
+          alt="Profile Picture"
           className="w-16 h-16 rounded-lg object-cover"
         />
         <div className="truncate">
-          <h3 className="font-semibold sm:text-lg text-text truncate">
+          <strong className="font-semibold sm:text-lg text-text truncate">
             {profile.name}
-          </h3>
+          </strong>
           <p className="text-text/70 text-sm truncate">{profile.email}</p>
           <p className="text-text/80 text-sm mt-1">{profile.role}</p>
         </div>

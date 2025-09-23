@@ -29,6 +29,7 @@ import dropdown_icon_white from "./dropdown_icon_white.svg";
 import no_venue_found from "./no_venue_found.svg";
 import no_image_found from "./no_image_found.svg";
 import no_upcoming_booking from "./no_upcoming_booking.svg";
+import no_confirmed_bookings_found from "./no_confirmed_bookings_found.svg";
 
 import desert_background from "./desert_background.png";
 import desert_home_bg from "./desert_home.avif";
@@ -64,4 +65,5 @@ export const assets = {
   no_venue_found,
   no_image_found,
   no_upcoming_booking,
+  no_confirmed_bookings_found,
 };

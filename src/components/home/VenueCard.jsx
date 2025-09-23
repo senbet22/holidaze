@@ -44,13 +44,9 @@ const VenueCard = ({ venue }) => {
               {venue.rating}
             </p>
           ) : (
-            <p className="flex font-medium text-lg text-text">
+            <p className="flex text-lg text-text">
+              <img src={assets.stars_icon} alt="New icon" className="w-5 h-7" />
               New
-              <img
-                src={assets.stars_icon}
-                alt="star icon"
-                className="w-5 h-7 mx-1"
-              />
             </p>
           )}
         </div>

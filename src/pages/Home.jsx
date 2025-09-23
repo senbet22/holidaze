@@ -14,7 +14,7 @@ const Home = () => {
   };
 
   const renderVenueGrid = () => {
-    // Initial load (no venues yet, just show skeletons)
+    // Initial load skeletons.
     if (isLoading && venues.length === 0) {
       return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
@@ -52,37 +52,40 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pt-20 pb-8">
-      {/* Header Section */}
-      <section className="pt-20 pb-8">
-        <div className="max-w-6xl mx-auto px-4">
-          <SearchBar onSearch={handleSearch} />
+    <>
+      <title>Dunestay</title>
+      <div className="min-h-screen bg-background mt-20 pb-8">
+        {/* Header Section */}
+        <section className="py-20">
+          <div className="max-w-6xl mx-auto px-4">
+            <SearchBar onSearch={handleSearch} />
 
-          <div className="mt-10">
-            <h1 className="text-text text-xl">Venues</h1>
-            <hr className="bg-primary border-0 h-3 w-15 rounded-br-full" />
+            <div className="mt-10">
+              <h1 className="text-text text-xl">Venues</h1>
+              <hr className="bg-primary border-0 h-3 w-15 rounded-br-full" />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Venues Grid Section */}
-      <section className="pb-8">
-        <div className="max-w-6xl mx-auto px-4">
-          {error ? (
-            <p className="text-center w-full text-red-500">{error}</p>
-          ) : (
-            renderVenueGrid()
-          )}
-        </div>
-      </section>
+        {/* Venues Grid Section */}
+        <section className="pb-8">
+          <div className="max-w-6xl mx-auto px-4">
+            {error ? (
+              <p className="text-center w-full text-red-500">{error}</p>
+            ) : (
+              renderVenueGrid()
+            )}
+          </div>
+        </section>
 
-      {/* Load More Section */}
-      <LoadMoreButton
-        onClick={loadMore}
-        isLoading={isLoading}
-        hasMore={hasMore}
-      />
-    </div>
+        {/* Load More Section */}
+        <LoadMoreButton
+          onClick={loadMore}
+          isLoading={isLoading}
+          hasMore={hasMore}
+        />
+      </div>
+    </>
   );
 };
 

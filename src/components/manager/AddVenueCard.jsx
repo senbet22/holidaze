@@ -45,7 +45,7 @@ const ManagerVenueCard = ({ venue, onEdit, onDelete }) => {
           {venue.media?.[0]?.url ? (
             <img
               src={venue.media[0].url}
-              alt={venue.media[0].alt || venue.name}
+              alt={venue.media[0].alt || ""}
               className="w-full h-full object-cover"
               onError={(e) => {
                 e.currentTarget.src = assets.no_image_found;
@@ -69,14 +69,21 @@ const ManagerVenueCard = ({ venue, onEdit, onDelete }) => {
           <p className="text-lg font-medium text-accent">
             ${venue.price}/night
           </p>
-          <p className="flex mx-2 text-lg ">
-            <img
-              src={assets.star_icon}
-              alt="Star Icon"
-              className="w-5 h-7 mx-1"
-            />
-            {venue.rating || 0}
-          </p>
+          {venue.rating > 0 ? (
+            <p className="flex mx-2 text-lg">
+              <img
+                src={assets.star_icon}
+                alt="star icon"
+                className="w-5 h-7 mx-1"
+              />
+              {venue.rating}
+            </p>
+          ) : (
+            <p className="flex text-lg text-text">
+              <img src={assets.stars_icon} alt="New icon" className="w-5 h-7" />
+              New
+            </p>
+          )}
         </div>
         <div>
           <p className="flex truncate mt-2  text-text">
@@ -95,13 +102,13 @@ const ManagerVenueCard = ({ venue, onEdit, onDelete }) => {
         <div className="flex gap-2 pt-2 border-t border-gray-100">
           <button
             onClick={() => onEdit(venue)}
-            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium text-text bg-primary/50 hover:bg-secondary rounded-lg cursor-pointer  transition-colors"
+            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium text-text bg-secondary hover:bg-primary rounded-lg cursor-pointer  transition-colors"
           >
             Edit
           </button>
           <button
             onClick={() => onDelete(venue)}
-            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium text-text bg-red-800/30 hover:bg-red-800/50 rounded-lg cursor-pointer  transition-colors"
+            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium text-[#0b1d2b] bg-red-300 hover:bg-red-400 rounded-lg cursor-pointer  transition-colors"
           >
             Delete
           </button>

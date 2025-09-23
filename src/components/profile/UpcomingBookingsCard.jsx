@@ -113,7 +113,14 @@ const UpcomingBookingsCard = () => {
                   {booking.rating}
                 </p>
               ) : (
-                <p className="flex mx-2 text-lg text-primary">✨New</p>
+                <p className="flex text-lg text-text">
+                  <img
+                    src={assets.stars_icon}
+                    alt="New icon"
+                    className="w-5 h-7"
+                  />
+                  New
+                </p>
               )}
             </div>
 
