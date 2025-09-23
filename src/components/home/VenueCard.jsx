@@ -16,7 +16,7 @@ const VenueCard = ({ venue }) => {
         src={
           venue.media?.length > 0 ? venue.media[0].url : assets.no_image_found
         }
-        alt={venue.media?.length > 0 ? venue.media[0].alt : "No venue image"}
+        alt={venue.media?.length > 0 ? venue.media[0].alt : "No image found"}
         onError={(e) => {
           e.currentTarget.src = assets.no_image_found;
           e.currentTarget.onerror = null;

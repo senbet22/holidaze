@@ -25,9 +25,9 @@ const AddVenueCard = ({ onClick }) => {
               +
             </div>
           </div>
-          <h3 className="text-lg font-semibold text-text mb-2">
+          <h2 className="text-lg font-semibold text-text mb-2">
             List Your Stay
-          </h3>
+          </h2>
           <p className="text-sm text-text">Click here to add new Venue</p>
         </div>
       </div>
@@ -59,12 +59,9 @@ const ManagerVenueCard = ({ venue, onEdit, onDelete }) => {
       </div>
 
       <div className="flex text-text flex-col justify-between p-2 h-full">
-        <h2
-          className="text-base  mb-0  font-semibold p-1 line-clamp-2   "
-          title={venue.name}
-        >
+        <h3 className="text-base  mb-0  font-semibold p-1 line-clamp-2   ">
           {venue.name}
-        </h2>
+        </h3>
         <div className="flex justify-between">
           <p className="text-lg font-medium text-accent">
             ${venue.price}/night

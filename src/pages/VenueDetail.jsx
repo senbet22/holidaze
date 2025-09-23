@@ -8,6 +8,7 @@ import { assets } from "../assets/assets.mjs";
 import VenueFeatures from "../components/VenueDetail/VenueFeatures";
 import ImageCarousel from "../components/VenueDetail/ImageCarousel";
 import VenueDetailSkeleton from "../components/skeletons/VenueDetailSkeleton";
+import ShareButton from "../components/buttons/ShareButton";
 
 const VenueDetail = () => {
   const { isDarkMode } = useDarkMode();
@@ -47,9 +48,13 @@ const VenueDetail = () => {
 
         <div className="max-w-6xl mx-auto mt-20 py-10 bg-background text-text shadow-sm">
           <header>
-            <h1 className="text-xl pt-12 mb-4 mx-2 sm:font-semibold font-bold line-clamp-2 break-words">
-              {venue.name}
-            </h1>
+            <div className="flex justify-between pt-12 mb-4 mx-2">
+              <h1 className="text-xl  sm:font-semibold font-bold line-clamp-2 break-words">
+                {venue.name}
+              </h1>
+              <ShareButton />
+            </div>
+
             <div className="flex items-center mx-2 text-lg gap-4 mb-6">
               <address className="flex items-center not-italic">
                 <img

@@ -218,7 +218,6 @@ const VenueManager = () => {
           onCreateVenue={handleCreateVenue}
           onEditVenue={handleEditVenue}
           venueToEdit={editingVenue}
-          onSuccess={() => console.log("Venue created/edited successfully!")}
         />
       </div>
     </>

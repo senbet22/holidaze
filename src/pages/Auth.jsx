@@ -27,7 +27,6 @@ const Auth = () => {
     if (state === "Sign Up") {
       try {
         const result = await registerUser(name, email, password, venueManager);
-        console.log("Registration result:", result);
 
         // Checks if result contains error information
         if (
@@ -40,7 +39,6 @@ const Auth = () => {
           toast.success("Registration Successful!", {
             autoClose: 2000,
           });
-          console.log("Registration successful!");
           setState("Login");
         }
       } catch (error) {
@@ -58,7 +56,6 @@ const Auth = () => {
           toast.success("Login successful!", {
             autoClose: 2000,
           });
-          console.log("Login successful:", data);
           navigate("/");
         }
       } catch (error) {
