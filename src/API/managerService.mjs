@@ -1,12 +1,18 @@
 import { API_VENUES, API_PROFILE } from "./constants.mjs";
 import { getProfileName } from "./sessionStorage.mjs";
-
 import {
   optionPost,
   optionGetProfile,
   optionDelete,
   optionPut,
 } from "./requestOptions.mjs";
+
+/**
+ * Venue management service functions.
+ *
+ * Provides CRUD operations for venues including create, read, update, and delete.
+ * Handles profile-specific venue retrieval and error management for all operations.
+ */
 
 /**
  * Creates a new venue
@@ -35,8 +41,10 @@ export const createVenue = async (venueData) => {
 };
 
 /**
- * Gets venues by profile
- * @returns {Promise<Object>} The profile venues data
+ * Gets all venues for the logged-in user's profile.
+ *
+ * @returns {Promise<Array>} Array of user's venues with booking data
+ * @throws {Error} If no profile found or fetch fails
  */
 export const getProfileVenues = async () => {
   try {
@@ -63,7 +71,13 @@ export const getProfileVenues = async () => {
   }
 };
 
-// Delete Venue
+/**
+ * Deletes a venue by ID.
+ *
+ * @param {string} venueId - ID of the venue to delete
+ * @returns {Promise<boolean>} True if deletion successful
+ * @throws {Error} If deletion fails
+ */
 export const deleteVenue = async (venueId) => {
   try {
     const response = await fetch(`${API_VENUES}/${venueId}`, optionDelete);
@@ -83,6 +97,14 @@ export const deleteVenue = async (venueId) => {
   }
 };
 
+/**
+ * Updates an existing venue.
+ *
+ * @param {string} venueId - ID of the venue to update
+ * @param {Object} venueData - Updated venue data
+ * @returns {Promise<Object>} Updated venue data
+ * @throws {Error} If update fails
+ */
 export const editVenue = async (venueId, venueData) => {
   try {
     const response = await fetch(

@@ -4,6 +4,22 @@ import { assets } from "../../assets/assets.mjs";
 import { useDarkMode } from "../../hooks/useDarkMode";
 import FocusLock from "react-focus-lock";
 
+/**
+ * ProfileCard component.
+ *
+ * Displays the user's profile information including avatar, name, email, role and bio.
+ * Provides an "Edit Profile" modal allowing the user to update their bio and avatar.
+ * Uses sessionStorage to persist profile data locally.
+ *
+ * Features:
+ * - Modal editing with FocusLock for accessibility.
+ * - Real-time bio/avatar updates upon save.
+ * - Loading states and error handling.
+ *
+ * @component
+ * @returns {JSX.Element} A card displaying profile details with edit functionality.
+ */
+
 const ProfileCard = () => {
   const { isDarkMode } = useDarkMode();
 
@@ -23,7 +39,6 @@ const ProfileCard = () => {
           ...parsed,
           role: parsed.venueManager ? "Manager" : "User",
           avatar: parsed.avatar?.url,
-          venueCount: parsed.venues?.length || 0,
         });
         setBio(parsed.bio || "");
         setAvatarUrl(parsed.avatar?.url || "");

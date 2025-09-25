@@ -1,3 +1,18 @@
+/**
+ * VenueLocationForm component
+ *
+ * A form for entering and editing venue location details.
+ * Supports:
+ * - Address, city, ZIP code, country, and continent.
+ * - Latitude and longitude with numeric input.
+ * - Updates parent state on change via `setLocation`.
+ *
+ * @param {Object} location - Current location state.
+ * @param {Function} setLocation - Setter function to update location state.
+ *
+ * @returns {JSX.Element} Form UI for venue location input.
+ */
+
 const VenueLocationForm = ({ location, setLocation }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;

@@ -2,9 +2,10 @@ import { getAccessToken } from "./sessionStorage.mjs";
 import { API_KEY } from "./constants.mjs";
 
 /**
- * This module contains various configurations for API request options, including GET, POST, PUT, DELETE,
- * and specific options for user registration and login. It utilizes an access token for authorization
- * where necessary and includes headers for content type and API key.
+ * HTTP request options for API calls.
+ *
+ * Provides configured fetch options for different HTTP methods with proper headers,
+ * authorization tokens, and API keys where required.
  */
 
 export const optionGet = {

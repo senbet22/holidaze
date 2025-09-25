@@ -1,11 +1,20 @@
 import { useState } from "react";
-import { loginUser } from "../API/login"; // Import the login service
-import { registerUser } from "../API/register"; // Import the Register service
+import { loginUser } from "../API/login";
+import { registerUser } from "../API/register";
 import { toast } from "react-toastify";
 import { assets } from "../assets/assets.mjs";
 import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { useAuth } from "../hooks/useAuth";
+
+/**
+ * Auth page component.
+ *
+ * Handles user login and registration with form validation,
+ * error handling, and venue manager registration option.
+ *
+ * @returns {JSX.Element}
+ */
 
 const Auth = () => {
   const { isDarkMode } = useDarkMode();

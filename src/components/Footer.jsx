@@ -2,6 +2,15 @@ import { NavLink } from "react-router-dom";
 import { assets } from "../assets/assets.mjs";
 import { useDarkMode } from "../hooks/useDarkMode";
 
+/**
+ * Footer component.
+ *
+ * Displays the website footer with logo, company message,
+ * contact information, and copyright notice.
+ *
+ * @returns {JSX.Element}
+ */
+
 const Footer = () => {
   const { isDarkMode } = useDarkMode();
 

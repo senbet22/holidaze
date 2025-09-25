@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import { fetchVenueById } from "../API/venueService.mjs";
 
+/**
+ * Custom hook to fetch and manage venue details.
+ *
+ * @param {string|number} venueId - The ID of the venue to fetch.
+ * @returns {object} { venue, isLoading, error } - Venue data, loading state, and error message.
+ */
+
 export const useVenueDetails = (venueId) => {
   const [venue, setVenue] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

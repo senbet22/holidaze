@@ -1,4 +1,13 @@
-// This Reloads the page when you click on the Logo even when youre lready in '/' homepage.
+/**
+ * HomeLink component.
+ *
+ * Wraps a NavLink to the homepage ('/'). If the user is already on the homepage,
+ * clicking the link forces a full page reload.
+ *
+ * @param {object} props - Props passed to the component.
+ * @param {React.ReactNode} props.children - The content to render inside the link.
+ * @returns {JSX.Element} The NavLink component with custom click behavior.
+ */
 
 import { NavLink, useLocation } from "react-router-dom";
 

@@ -1,6 +1,14 @@
 import { API_BOOKINGS } from "./constants.mjs";
 import { optionPost } from "./requestOptions.mjs";
 
+/**
+ * Creates a new booking via API.
+ *
+ * @param {Object} bookingData - Booking details (dateFrom, dateTo, guests, venueId)
+ * @returns {Promise<Object>} Created booking data
+ * @throws {Error} If booking creation fails
+ */
+
 export const createBooking = async (bookingData) => {
   try {
     const response = await fetch(API_BOOKINGS, optionPost(bookingData));

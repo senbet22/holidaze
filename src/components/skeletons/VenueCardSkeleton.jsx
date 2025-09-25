@@ -1,3 +1,15 @@
+/**
+ * VenueCardSkeleton component.
+ *
+ * Renders a skeleton/loading state for a VenueCard, including placeholders for:
+ * - Image
+ * - Title
+ * - Price and rating
+ * - Location
+ *
+ * @returns {JSX.Element}
+ */
+
 const VenueCardSkeleton = () => {
   return (
     <div className="flex relative bg-background shadow-sm shadow-text/30 flex-col w-full rounded-xl overflow-hidden animate-pulse">

@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "./AuthContext";
 
+/**
+ * Provides authentication state and methods to child components.
+ * Manages user login, logout, and token persistence in sessionStorage.
+ */
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

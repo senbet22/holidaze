@@ -1,3 +1,16 @@
+/**
+ * VenueFeatures component.
+ *
+ * Displays available features of a venue (WiFi, Parking, Breakfast, Pets)
+ * with corresponding icons, adapting to dark mode.
+ *
+ * @param {Object} props
+ * @param {Object} props.meta - Feature availability flags for the venue.
+ * @param {boolean} props.isDarkMode - Indicates if dark mode is active.
+ * @param {Object} props.assets - Asset icons for features.
+ * @returns {JSX.Element|null}
+ */
+
 const VenueFeatures = ({ meta, isDarkMode, assets }) => {
   if (!meta) return null;
 

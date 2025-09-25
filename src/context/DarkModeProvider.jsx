@@ -1,6 +1,14 @@
 import { useState, useEffect } from "react";
 import DarkModeContext from "./DarkModeContext";
 
+/**
+ * Provides dark mode state and toggle function to the app.
+ *
+ * @component
+ * @param {object} props
+ * @param {React.ReactNode} props.children - The components that will consume dark mode context.
+ */
+
 export const DarkModeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("theme") === "dark" ||

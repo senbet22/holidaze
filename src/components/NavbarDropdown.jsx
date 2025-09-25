@@ -3,6 +3,18 @@ import { NavLink } from "react-router-dom";
 import { assets } from "../assets/assets.mjs";
 import { useAuth } from "../hooks/useAuth";
 
+/**
+ * NavbarDropdown component.
+ *
+ * Renders a user profile dropdown with links to Home, Profile,
+ * Manage Venues (if user is a venue manager), and Logout.
+ * Handles click outside to close the dropdown.
+ *
+ * @param {Object} props
+ * @param {boolean} props.isDarkMode - Indicates if dark mode is active.
+ * @returns {JSX.Element}
+ */
+
 const NavbarDropdown = ({ isDarkMode }) => {
   const { logout, user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);

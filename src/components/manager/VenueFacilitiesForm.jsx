@@ -1,3 +1,20 @@
+/**
+ * VenueFacilitiesForm component
+ *
+ * A dynamic checkbox form for editing venue facilities.
+ *
+ * Props:
+ * @param {Object} meta - Current facilities state (e.g., { wifi: true, parking: false }).
+ * @param {Function} setMeta - Setter function to update facilities state.
+ *
+ * Features:
+ * - Renders a checkbox for each facility in `meta`.
+ * - Toggles the value of each facility when clicked.
+ * - Styled grid layout with rounded container and spacing.
+ *
+ * @returns {JSX.Element} Form UI for venue facilities input.
+ */
+
 const VenueFacilitiesForm = ({ meta, setMeta }) => {
   const handleCheckboxChange = (key) => {
     setMeta({ ...meta, [key]: !meta[key] });

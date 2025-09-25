@@ -1,3 +1,12 @@
+/**
+ * Button labeled "Reserve" with optional click handler and disabled state.
+ *
+ * @param {Object} props
+ * @param {function} props.onClick - Function to call when clicked.
+ * @param {boolean} props.disabled - If true, button is disabled.
+ * @param {string} [props.className] - Optional CSS classes.
+ */
+
 const ReserveButton = ({ onClick, disabled, className }) => {
   return (
     <button

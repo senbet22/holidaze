@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { assets } from "../../assets/assets.mjs";
 
+/**
+ * SearchBar component.
+ *
+ * Displays a search input with icon and submit button for venue searching.
+ * Manages search query state and calls onSearch callback when submitted.
+ *
+ * @component
+ * @param {Function} onSearch - Callback function called with search query
+ * @returns {JSX.Element} Search bar with input field and search button
+ */
+
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 

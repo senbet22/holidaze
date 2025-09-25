@@ -5,6 +5,15 @@ import { useVenues } from "../hooks/useVenues.mjs";
 import VenueCardSkeleton from "../components/skeletons/VenueCardSkeleton";
 import { assets } from "../assets/assets.mjs";
 
+/**
+ * Home page component.
+ *
+ * Displays a searchable, paginated grid of venues
+ * with loading states and empty/error handling.
+ *
+ * @returns {JSX.Element}
+ */
+
 const Home = () => {
   const { venues, isLoading, error, searchVenuesByQuery, loadMore, hasMore } =
     useVenues();

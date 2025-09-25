@@ -1,5 +1,18 @@
 import FocusLock from "react-focus-lock";
 
+/**
+ * ConfirmDeleteModal component.
+ *
+ * Displays a confirmation modal for deleting a venue with focus management.
+ * Shows venue name and provides cancel/delete actions.
+ *
+ * @component
+ * @param {boolean} isOpen - Whether the modal is visible
+ * @param {Function} onClose - Callback to close the modal
+ * @param {Function} onConfirm - Callback to confirm deletion
+ * @param {string} venueName - Name of the venue to be deleted
+ * @returns {JSX.Element|null} Delete confirmation modal or null if not open
+ */
 const ConfirmDeleteModal = ({ isOpen, onClose, onConfirm, venueName }) => {
   if (!isOpen) return null;
 

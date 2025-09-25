@@ -1,3 +1,11 @@
+/**
+ * VenueDetailSkeleton component.
+ *
+ * Renders a skeleton/loading state for the VenueDetail page.
+ * Including placeholders for all the contents in the VenueDetail.jsx page.
+ * @returns {JSX.Element}
+ */
+
 const VenueDetailSkeleton = () => {
   return (
     <div className="bg-background animate-pulse">

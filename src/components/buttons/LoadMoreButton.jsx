@@ -1,3 +1,12 @@
+/**
+ * Button to load more items with loading and availability states.
+ *
+ * @param {Object} props
+ * @param {function} props.onClick - Callback when button is clicked.
+ * @param {boolean} props.isLoading - Shows loading state when true.
+ * @param {boolean} props.hasMore - If false, button is hidden.
+ */
+
 const LoadMoreButton = ({ onClick, isLoading, hasMore }) => {
   if (!hasMore) return null;
 

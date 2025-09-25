@@ -1,7 +1,18 @@
-import axios from "axios";
+import { optionGet } from "./requestOptions.mjs";
 import { API_VENUES } from "./constants.mjs";
 
-// Fetch all venues
+/**
+ * Venue data fetching service.
+ */
+
+/**
+ * Fetches paginated venues, newest first.
+ *
+ * @param {number} page - Page number
+ * @param {number} limit - Items per page
+ * @returns {Promise<Object>} Venues data with pagination
+ * @throws {Error} If fetch fails
+ */
 export const fetchAllVenues = async (page = 1, limit = 24) => {
   try {
     const params = new URLSearchParams({
@@ -11,33 +22,71 @@ export const fetchAllVenues = async (page = 1, limit = 24) => {
       sortOrder: "desc", // Newest Venue first.
     });
 
-    const response = await axios.get(`${API_VENUES}?${params.toString()}`);
+    const response = await fetch(
+      `${API_VENUES}?${params.toString()}`,
+      optionGet
+    );
+    const data = await response.json();
 
-    return response.data;
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return data;
   } catch (error) {
     console.error("Error fetching venues:", error);
     throw error;
   }
 };
 
-// Fetch for all the Venues, when using Search input + params.
+/**
+ * Searches venues by query with pagination.
+ *
+ * @param {string} query - Search query
+ * @param {number} page - Page number
+ * @param {number} limit - Items per page
+ * @returns {Promise<Object>} Search results with pagination
+ * @throws {Error} If search fails
+ */
 export const searchVenues = async (query, page = 1, limit = 24) => {
   try {
-    const response = await axios.get(
-      `${API_VENUES}/search?q=${query}&page=${page}&limit=${limit}`
+    const response = await fetch(
+      `${API_VENUES}/search?q=${query}&page=${page}&limit=${limit}`,
+      optionGet
     );
-    return response.data;
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return data;
   } catch (error) {
     console.error("Error searching venues:", error);
     throw error;
   }
 };
 
-// API endpoint to fetch a specific venue by its ID.
+/**
+ * Fetches single venue by ID with bookings.
+ *
+ * @param {string} id - Venue ID
+ * @returns {Promise<Object>} Venue data with bookings
+ * @throws {Error} If fetch fails
+ */
 export const fetchVenueById = async (id) => {
   try {
-    const response = await axios.get(`${API_VENUES}/${id}?_bookings=true`);
-    return response.data.data; // Extracts the venue data from the response
+    const response = await fetch(
+      `${API_VENUES}/${id}?_bookings=true`,
+      optionGet
+    );
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return data.data; // Extracts the venue data from the response
   } catch (error) {
     console.error(`Error fetching venue with ID ${id}:`, error);
     throw error;

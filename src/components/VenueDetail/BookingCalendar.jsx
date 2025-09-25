@@ -4,6 +4,21 @@ import { createBooking } from "../../API/bookingService.mjs";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * BookingCalendar component.
+ *
+ * Displays a date range picker and guest selector for booking a venue,
+ * validates input against existing bookings, calculates total price,
+ * and submits booking via API.
+ *
+ * @param {Object} props
+ * @param {string} props.venueId - ID of the venue being booked.
+ * @param {number} props.maxGuests - Maximum number of guests allowed.
+ * @param {number} props.price - Price per night for the venue.
+ * @param {Array<Object>} [props.existingBookings=[]] - Array of existing bookings for the venue.
+ * @returns {JSX.Element}
+ */
+
 function BookingCalendar({ venueId, maxGuests, price, existingBookings = [] }) {
   const [range, setRange] = useState();
   const [guests, setGuests] = useState(1);

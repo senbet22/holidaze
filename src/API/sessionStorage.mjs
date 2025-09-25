@@ -1,6 +1,5 @@
 /**
- * Retrieves the access token from sessionStorage.
- * @returns {string|null} The access token if it exists, otherwise null.
+ * Session storage utilities for user authentication and profile data.
  */
 
 export function getAccessToken() {
@@ -8,6 +7,11 @@ export function getAccessToken() {
   return token ? token : null;
 }
 
+/**
+ * Gets user's profile name from session storage.
+ *
+ * @returns {string|null} Profile name or null if not found
+ */
 export function getProfileName() {
   const storedProfile = sessionStorage.getItem("DunestayProfile");
 

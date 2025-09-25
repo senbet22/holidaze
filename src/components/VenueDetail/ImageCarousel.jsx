@@ -2,6 +2,18 @@ import { useState, useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { assets } from "../../assets/assets.mjs";
 
+/**
+ * ImageCarousel component.
+ *
+ * Displays a horizontal, scrollable image carousel using Embla,
+ * with optional dark mode styling and fallback image support.
+ *
+ * @param {Object} props
+ * @param {Array<{url: string, alt?: string}>} props.images - List of images to display.
+ * @param {boolean} props.isDarkMode - Indicates if dark mode is active.
+ * @returns {JSX.Element}
+ */
+
 const ImageCarousel = ({ images = [], isDarkMode }) => {
   const [emblaRef, embla] = useEmblaCarousel({
     loop: false,

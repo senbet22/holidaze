@@ -1,6 +1,20 @@
 import { useState, useEffect } from "react";
 import { fetchAllVenues, searchVenues } from "../API/venueService.mjs";
 
+/**
+ * Custom hook for fetching, searching, and paginating venues.
+ *
+ * @returns {object} {
+ *   venues: Array,            // Loaded venue objects
+ *   meta: Object,             // Pagination metadata
+ *   isLoading: boolean,       // Loading state
+ *   error: string|null,       // Error message if any
+ *   searchVenuesByQuery: Function, // Search venues by query
+ *   loadMore: Function,       // Load next page of venues
+ *   hasMore: boolean          // True if more pages are available
+ * }
+ */
+
 export const useVenues = () => {
   const [venues, setVenues] = useState([]);
   const [meta, setMeta] = useState({

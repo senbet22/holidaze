@@ -3,6 +3,23 @@ import { assets } from "../../assets/assets.mjs";
 import useEmblaCarousel from "embla-carousel-react";
 import { toast } from "react-toastify";
 
+/**
+ * VenueMediaForm component
+ *
+ * Allows users to manage photos for a venue.
+ * Features include:
+ * - Add new photos with URL and alt text.
+ * - Remove photos.
+ * - Carousel display using Embla with dots navigation.
+ * - Maximum of 8 photos enforced with toast warnings.
+ * - Handles invalid image URLs gracefully.
+ *
+ * @param {Array} media - Current list of media objects ({url, alt}).
+ * @param {Function} setMedia - Setter to update the media list.
+ *
+ * @returns {JSX.Element} A photo management form with carousel preview.
+ */
+
 const VenueMediaForm = ({ media, setMedia }) => {
   const [currentPhoto, setCurrentPhoto] = useState({ url: "", alt: "" });
 

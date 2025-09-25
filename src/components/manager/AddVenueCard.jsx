@@ -20,7 +20,7 @@ const AddVenueCard = ({ onClick }) => {
     >
       <div className="flex-1 flex items-center justify-center h-88 sm:h-56">
         <div className="text-center">
-          <div className="mb-4">
+          <div className="m-4">
             <div className="size-14 bg-primary text-[#040605] rounded mx-auto flex items-center justify-center text-5xl font-bold">
               +
             </div>

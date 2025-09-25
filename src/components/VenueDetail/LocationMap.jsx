@@ -2,6 +2,19 @@ import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 
+/**
+ * LocationMap component.
+ *
+ * Renders a Leaflet map centered on the given latitude and longitude,
+ * with a marker and popup displaying the venue name.
+ *
+ * @param {Object} props
+ * @param {number} props.lat - Latitude of the location.
+ * @param {number} props.lng - Longitude of the location.
+ * @param {string} [props.name] - Optional name displayed in the marker popup.
+ * @returns {JSX.Element}
+ */
+
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:

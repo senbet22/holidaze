@@ -2,6 +2,16 @@ import { useEffect, useState } from "react";
 import { assets } from "../../assets/assets.mjs";
 import { useDarkMode } from "../../hooks/useDarkMode";
 
+/**
+ * BackToTopButton component.
+ *
+ * Displays a floating "Back to Top" button when the user scrolls down the page.
+ * Clicking the button smoothly scrolls the window back to the top.
+ *
+ * @component
+ * @returns {JSX.Element} The back-to-top button with scroll visibility logic.
+ */
+
 export default function BackToTopButton() {
   const { isDarkMode } = useDarkMode();
   const [isVisible, setIsVisible] = useState(false);

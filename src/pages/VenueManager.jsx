@@ -13,6 +13,15 @@ import {
 } from "../API/managerService.mjs";
 import { assets } from "../assets/assets.mjs";
 
+/**
+ * VenueManager page component.
+ *
+ * Lets venue owners manage venues (create, edit, delete)
+ * and view upcoming bookings.
+ *
+ * @returns {JSX.Element}
+ */
+
 const VenueManager = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("venues");

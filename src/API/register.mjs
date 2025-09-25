@@ -1,5 +1,17 @@
-import axios from "axios";
+import { optionPost } from "./requestOptions.mjs";
 import { API_AUTH_REGISTER } from "./constants.mjs";
+
+/**
+ * Registers a new user account.
+ *
+ * @param {string} name - User's name
+ * @param {string} email - User's email
+ * @param {string} password - User's password
+ * @param {boolean} venueManager - Whether user is a venue manager
+ * @returns {Promise<Object>} Registration data or field-specific errors
+ * @throws {Error} If network error occurs
+ */
+
 export const registerUser = async (
   name,
   email,
@@ -7,13 +19,22 @@ export const registerUser = async (
   venueManager = false
 ) => {
   try {
-    const response = await axios.post(API_AUTH_REGISTER, {
+    const options = optionPost({
       name,
       email,
       password,
       venueManager,
     });
-    return response.data;
+    const response = await fetch(API_AUTH_REGISTER, options);
+    const data = await response.json();
+
+    if (!response.ok) {
+      const error = new Error();
+      error.response = { data };
+      throw error;
+    }
+
+    return data;
   } catch (error) {
     if (error.response && error.response.data) {
       const { errors, status, statusCode } = error.response.data;

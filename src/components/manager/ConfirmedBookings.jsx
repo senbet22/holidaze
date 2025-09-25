@@ -1,4 +1,17 @@
 import { assets } from "../../assets/assets.mjs";
+
+/**
+ * ConfirmedBookings component.
+ *
+ * Displays a booking card with venue image, guest details, dates, and total cost.
+ * Shows "Confirmed" status badge and handles missing venue images with fallback.
+ *
+ * @component
+ * @param {Object} booking - Booking object with dateFrom, dateTo, guests, and customer details
+ * @param {Object} venue - Venue object with media, name, and price
+ * @returns {JSX.Element|null} Booking card or null if no booking provided
+ */
+
 const ConfirmedBookings = ({ booking, venue }) => {
   if (!booking) return null;
 

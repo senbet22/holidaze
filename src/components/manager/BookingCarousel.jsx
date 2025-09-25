@@ -4,6 +4,18 @@ import UpcomingBookingsCard from "../manager/ConfirmedBookings";
 import { assets } from "../../assets/assets.mjs";
 import { useDarkMode } from "../../hooks/useDarkMode";
 
+/**
+ * BookingCarousel component.
+ *
+ * Displays bookings in a horizontal scrollable carousel with navigation arrows.
+ * Uses Embla carousel for smooth scrolling and supports keyboard navigation.
+ *
+ * @component
+ * @param {Array} bookings - Array of booking objects to display
+ * @param {Object} venue - Venue object passed to each booking card
+ * @returns {JSX.Element} Carousel with booking cards and navigation controls
+ */
+
 const BookingCarousel = ({ bookings, venue }) => {
   const { isDarkMode } = useDarkMode();
 

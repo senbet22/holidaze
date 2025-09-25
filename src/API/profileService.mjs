@@ -2,7 +2,16 @@ import { API_PROFILE } from "./constants.mjs";
 import { optionGetProfile, optionPut } from "./requestOptions.mjs";
 import { getProfileName } from "./sessionStorage.mjs";
 
-// Fetch profile bookings
+/**
+ * Profile service for bookings and profile updates.
+ */
+
+/**
+ * Gets user's bookings with venue data.
+ *
+ * @returns {Promise<Array>} User bookings sorted by date
+ * @throws {Error} If fetch fails
+ */
 export const getProfileBookings = async () => {
   try {
     const profileName = getProfileName();
@@ -22,7 +31,13 @@ export const getProfileBookings = async () => {
   }
 };
 
-// Update profile (bio + avatar)
+/**
+ * Updates user profile data.
+ *
+ * @param {Object} updateData - Profile data to update
+ * @returns {Promise<Object>} Updated profile data
+ * @throws {Error} If update fails
+ */
 export const updateProfile = async (updateData) => {
   try {
     const profileName = getProfileName();

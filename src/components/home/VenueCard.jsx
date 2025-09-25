@@ -2,6 +2,17 @@ import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets.mjs";
 import { useDarkMode } from "../../hooks/useDarkMode";
 
+/**
+ * VenueCard component.
+ *
+ * Displays a venue as a clickable card with image, name, price, rating, and location.
+ * Links to individual venue page and handles missing images with fallback.
+ *
+ * @component
+ * @param {Object} venue - Venue object with id, name, media, price, rating, and location
+ * @returns {JSX.Element} Clickable venue card with venue details
+ */
+
 const VenueCard = ({ venue }) => {
   const { isDarkMode } = useDarkMode();
   const currencySymbol = "$";

@@ -10,6 +10,15 @@ import ImageCarousel from "../components/VenueDetail/ImageCarousel";
 import VenueDetailSkeleton from "../components/skeletons/VenueDetailSkeleton";
 import ShareButton from "../components/buttons/ShareButton";
 
+/**
+ * VenueDetail page component.
+ *
+ * Displays full information about a single venue, including images,
+ * location map, features, and booking calendar.
+ *
+ * @returns {JSX.Element}
+ */
+
 const VenueDetail = () => {
   const { isDarkMode } = useDarkMode();
 
@@ -46,7 +55,7 @@ const VenueDetail = () => {
       <article className="bg-background">
         {/* Dynamic page title */}
 
-        <div className="max-w-6xl mx-auto mt-20 py-10 bg-background text-text shadow-sm">
+        <div className="max-w-6xl mx-auto mt-20 py-10 bg-background text-text">
           <header>
             <div className="flex justify-between pt-12 mb-4 mx-2">
               <h1 className="text-xl  sm:font-semibold font-bold line-clamp-2 break-words">

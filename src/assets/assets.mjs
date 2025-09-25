@@ -1,3 +1,7 @@
+/**
+ * Centralized asset exports for images and icons.
+ */
+
 // Logo
 import dunestay_logo from "./dunestay_light.svg";
 import dunestay_dark_logo from "./dunestay_dark.svg";
@@ -8,7 +12,6 @@ import dunestay_logo_text_dark from "./dunestay_logo_text_dark.svg";
 import cross_icon from "./cross_icon.svg";
 import cross_icon_white from "./cross_icon_white.svg";
 import share_icon from "./share_icon.svg";
-import share_icon_white from "./share_icon_white.svg";
 import search_icon from "./search_icon.svg";
 import search_icon_black from "./search_icon_black.svg";
 import parking_icon from "./parking_icon.svg";
@@ -32,6 +35,7 @@ import no_venue_found from "./no_venue_found.svg";
 import no_image_found from "./no_image_found.svg";
 import no_upcoming_booking from "./no_upcoming_booking.svg";
 import no_confirmed_bookings_found from "./no_confirmed_bookings_found.svg";
+import no_page_found from "./no_page_found.svg";
 
 import desert_background from "./desert_background.png";
 
@@ -56,7 +60,6 @@ export const assets = {
   menu_icon,
   menu_icon_white,
   share_icon,
-  share_icon_white,
   star_icon,
   stars_icon,
   location_icon,
@@ -68,4 +71,5 @@ export const assets = {
   no_image_found,
   no_upcoming_booking,
   no_confirmed_bookings_found,
+  no_page_found,
 };

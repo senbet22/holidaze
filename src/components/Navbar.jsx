@@ -6,6 +6,15 @@ import { useAuth } from "../hooks/useAuth";
 import HomeLink from "./routing/HomeLink";
 import NavbarDropdown from "./NavbarDropdown";
 
+/**
+ * Navbar component.
+ *
+ * Renders the main navigation bar with logo, dark mode toggle,
+ * authentication links, and responsive mobile menu.
+ *
+ * @returns {JSX.Element}
+ */
+
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();

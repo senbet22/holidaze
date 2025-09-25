@@ -2,6 +2,14 @@ import { assets } from "../assets/assets.mjs";
 import ProfileCard from "../components/profile/ProfileCard";
 import UpcomingBookingsCard from "../components/profile/UpcomingBookingsCard";
 
+/**
+ * Profile page component.
+ *
+ * Shows user profile details and upcoming bookings.
+ *
+ * @returns {JSX.Element}
+ */
+
 const Profile = () => {
   return (
     <>

@@ -1,5 +1,13 @@
+/**
+ * API configuration constants.
+ *
+ * Contains base URLs and endpoints for authentication, venues, bookings, and profiles.
+ * Uses environment variables for sensitive configuration like API keys.
+ */
+
 // Stored API KEY
 export const API_KEY = import.meta.env.VITE_API_KEY;
+
 // Base API
 export const API_BASE = "https://v2.api.noroff.dev";
 

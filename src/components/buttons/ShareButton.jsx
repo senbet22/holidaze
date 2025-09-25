@@ -1,6 +1,13 @@
 import { toast } from "react-toastify";
 import { assets } from "../../assets/assets.mjs";
 
+/**
+ * Button that copies the current page URL to the clipboard.
+ *
+ * @param {Object} props
+ * @param {string} [props.className] - Optional CSS classes for styling.
+ */
+
 const ShareButton = ({ className = " cursor-pointer hover:scale-105" }) => {
   const handleShare = async () => {
     try {

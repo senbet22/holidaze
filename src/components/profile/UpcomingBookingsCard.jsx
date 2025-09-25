@@ -6,6 +6,17 @@ import { getToday } from "../../utils/todayDate.mjs";
 import { formatDate } from "../../utils/formatDate.mjs";
 import { useDarkMode } from "../../hooks/useDarkMode";
 
+/**
+ * UpcomingBookingsCard component.
+ *
+ * Displays a list of the user's upcoming venue bookings.
+ * Fetches booking data on mount and filters out past bookings.
+ * Each booking card is clickable and navigates to the corresponding venue detail page.
+ *
+ * @component
+ * @returns {JSX.Element} A grid of upcoming bookings with images, dates, price, location, and rating.
+ */
+
 const UpcomingBookingsCard = () => {
   const { isDarkMode } = useDarkMode();
   const navigate = useNavigate();

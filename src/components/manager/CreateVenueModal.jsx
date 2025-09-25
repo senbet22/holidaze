@@ -6,6 +6,38 @@ import VenueLocationForm from "./VenueLocationForm";
 import { useDarkMode } from "../../hooks/useDarkMode";
 import FocusLock from "react-focus-lock";
 
+/**
+ * CreateVenueModal Component
+ *
+ * A reusable modal form for creating or editing a venue.
+ *
+ * Props:
+ * @param {boolean} isOpen - Controls modal visibility.
+ * @param {Function} onClose - Callback to close the modal.
+ * @param {Function} onSuccess - Callback triggered after successful creation/edit.
+ * @param {Function} onCreateVenue - Async function to create a new venue.
+ * @param {Function} onEditVenue - Async function to update an existing venue.
+ * @param {Object} venueToEdit - Existing venue data for editing (optional).
+ *
+ * Features:
+ * - Pre-fills form fields when editing an existing venue.
+ * - Handles venue details, media, facilities, and location sections.
+ * - Validates required fields before submission.
+ * - Integrates with VenueMediaForm, VenueFacilitiesForm, and VenueLocationForm.
+ * - Displays submission errors and loading states.
+ * - Uses FocusLock for accessibility when modal is open.
+ *
+ * Usage:
+ * <CreateVenueModal
+ *   isOpen={isModalOpen}
+ *   onClose={closeModal}
+ *   onSuccess={(msg) => toast.success(msg)}
+ *   onCreateVenue={createVenueAPI}
+ *   onEditVenue={editVenueAPI}
+ *   venueToEdit={selectedVenue}
+ * />
+ */
+
 const CreateVenueModal = ({
   isOpen,
   onClose,
