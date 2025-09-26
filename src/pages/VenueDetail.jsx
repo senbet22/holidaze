@@ -50,11 +50,10 @@ const VenueDetail = () => {
 
   return (
     <>
+      {/* Dynamic page title */}
       <title>{venue.name}</title>
 
       <article className="bg-background">
-        {/* Dynamic page title */}
-
         <div className="max-w-6xl mx-auto mt-20 py-10 bg-background text-text">
           <header>
             <div className="flex justify-between pt-12 mb-4 mx-2">
