@@ -22,6 +22,7 @@ const Profile = () => {
             </h1>
           </header>
 
+          {/* Profile Card */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <aside
               className="lg:col-span-1"
@@ -30,6 +31,7 @@ const Profile = () => {
               <ProfileCard />
             </aside>
 
+            {/* Upcoming booking section */}
             <section
               className="lg:col-span-2"
               aria-labelledby="bookings-heading"

@@ -10,7 +10,7 @@ Dunestay is an accommodation booking platform where users can browse and book ve
 
 ### Concept:
 
-I chose a desert-themed booking platform using the `Holidaze` API with all available venues. I developed this dune-side concept to design for something more specific and cohesive, focusing on unique desert escapes that connect travelers with memorable experiences.
+I chose a desert-themed booking platform using the `Holidaze` API with all available venues. I developed this dune-side concept to design for something more specific and cohesive.
 
 ## Key Features
 
@@ -35,8 +35,6 @@ Venue Managers: Register as a manager, create/edit/delete venues, and manage boo
 - 🎨 Dark Mode: Toggle for personalized viewing.
 
 ###
-
-insert images here
 
 ![DuneStay Homepage Preview](/public/dunestay_preview_homepage.png)  
 ![Auth Flow](/public/dunestay_preview_auth.png)  
@@ -63,6 +61,7 @@ npm install
 ### 🛠 Dependencies
 
 - React 19
+- Tailwind CSS
 - React Router DOM
 - React Toastify
 - Embla Carousel

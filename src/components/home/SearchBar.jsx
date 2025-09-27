@@ -42,7 +42,7 @@ const SearchBar = ({ onSearch }) => {
               placeholder="Search for a venue..."
               value={query}
               onChange={handleChange}
-              className="bg-white border border-gray-300 text-[#0b1d2b] text-lg p-3 pl-12 rounded-l-lg w-full focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent"
+              className="bg-[#f9fbfa] border border-text/60 text-[#0b1d2b] text-lg p-3 pl-12 rounded-l-lg w-full focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent"
             />
             <img
               className="absolute left-4 size-5 top-1/2 transform -translate-y-1/2 text-gray-400"

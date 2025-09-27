@@ -68,7 +68,7 @@ function BookingCalendar({ venueId, maxGuests, price, existingBookings = [] }) {
         setError(
           "Selected dates overlap with an existing booking. Please choose different dates."
         );
-        return; // Stop booking if overlap
+        return; // Stops booking if overlap
       }
     }
 

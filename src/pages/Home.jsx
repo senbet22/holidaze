@@ -34,7 +34,8 @@ const Home = () => {
       );
     }
 
-    // Empty state
+    // Empty state fallbakc image
+
     if (venues.length === 0) {
       return (
         <div className="flex w-full justify-start items-center">

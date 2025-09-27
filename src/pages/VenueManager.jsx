@@ -30,7 +30,7 @@ const VenueManager = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const [editingVenue, setEditingVenue] = useState(null); // For edit modal
+  const [editingVenue, setEditingVenue] = useState(null);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [venueToDelete, setVenueToDelete] = useState(null);
 
@@ -109,6 +109,7 @@ const VenueManager = () => {
   return (
     <>
       <div className="min-h-screen bg-background mt-20 px-4">
+        {/* Dynamic Title */}
         <title>Dunestay - VenueManager</title>
         <div className="max-w-6xl mx-auto py-20">
           {/* Header */}
