@@ -56,14 +56,14 @@ const VenueDetail = () => {
       <article className="bg-background">
         <div className="max-w-6xl mx-auto mt-20 py-10 bg-background text-text">
           <header>
-            <div className="flex justify-between pt-12 mb-4 mx-2">
+            <div className="flex justify-between pt-12 mb-4 mx-4">
               <h1 className="text-xl  sm:font-semibold font-bold line-clamp-2 break-words">
                 {venue.name}
               </h1>
               <ShareButton />
             </div>
 
-            <div className="flex items-center mx-2 text-lg gap-4 mb-6">
+            <div className="flex items-center mx-4 text-lg gap-4 mb-6">
               <address className="flex items-center not-italic">
                 <img
                   src={

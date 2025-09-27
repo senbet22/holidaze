@@ -65,12 +65,12 @@ const Home = () => {
       <title>Dunestay</title>
       <div className="min-h-screen bg-background mt-20 pb-8">
         {/* Header Section */}
-        <section className="py-20">
+        <section className="pt-20 mb-4">
           <div className="max-w-6xl mx-auto px-4">
             <SearchBar onSearch={handleSearch} />
 
             <div className="mt-10">
-              <h1 className="text-text text-xl">Venues</h1>
+              <h1 className="text-text font-medium text-xl">Venues</h1>
               <hr className="bg-primary border-0 h-3 w-15 rounded-br-full" />
             </div>
           </div>

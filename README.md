@@ -39,7 +39,6 @@ Venue Managers: Register as a manager, create/edit/delete venues, and manage boo
 insert images here
 
 ![DuneStay Homepage Preview](/public/dunestay_preview_homepage.png)  
-![Venue Details Page](/public/dunestay_preview_venuedetail.png)  
 ![Auth Flow](/public/dunestay_preview_auth.png)  
 ![Profile Page](/public/dunestay_preview_profile.png)
 
@@ -100,9 +99,9 @@ It also imports the `.env` file for the API key, securely handled using `import.
 
 **Error Handling** in **API Calls**: The application provides error messages in case of failed requests. For example, when logging in, if the request fails, the error message will be captured from the API response and thrown, indicating the status code, status, and specific error message.
 
-**Email Validation Requirement**: a valid email must end with either @noroff.no or @stud.noroff.no. Any other email domains will be rejected during the signup process.
+**Email Validation Requirement:** a valid email must end with either @noroff.no or @stud.noroff.no. Any other email domains will be rejected during the signup process.
 
-## Accesibility
+## Accesibility Features:
 
 - Semantic HTML elements for structure.
 
