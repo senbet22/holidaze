@@ -38,12 +38,11 @@ Venue Managers: Register as a manager, create/edit/delete venues, and manage boo
 
 ![DuneStay Homepage Preview](/public/dunestay_preview_homepage.png)
 
-<table>
-  <tr>
-    <td><img src="/public/dunestay_preview_auth.png" alt="Auth Flow" width="400"/></td>
-    <td><img src="/public/dunestay_preview_profile.png" alt="Profile Page" width="400"/></td>
-  </tr>
-</table>
+<div style="display: flex; gap: 10px;">
+  <img src="/public/dunestay_preview_auth.png" alt="Auth Flow" width="45%"/>
+  <img src="/public/dunestay_preview_profile.png" alt="Profile Page" width="45%"/>
+</div>
+
 ###
 
 ## 📝 How to Set Up the Project
@@ -132,10 +131,6 @@ It also imports the `.env` file for the API key, securely handled using `import.
 - React-toastify
   Used for toast messages throughout the project.
   https://www.npmjs.com/package/react-toastify
-
-- Claude AI
-  Used for development assistance, code review, and problem-solving guidance.
-  https://www.claude.ai/
 
 <h3 align="left">Built with:</h3>
 
