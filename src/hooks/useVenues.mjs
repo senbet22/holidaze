@@ -29,6 +29,7 @@ export const useVenues = () => {
 
   const ITEMS_PER_PAGE = 24;
 
+  // Load venues (all or by search query)
   const loadVenues = async (page = 1, newSearch = false) => {
     setIsLoading(true);
     try {
@@ -58,6 +59,7 @@ export const useVenues = () => {
     loadVenues(1, true);
   }, []);
 
+  // Search venues by query
   const searchVenuesByQuery = async (query) => {
     setSearchQuery(query);
 
