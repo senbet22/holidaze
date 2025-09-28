@@ -2,7 +2,7 @@
 
 # DuneStay - Noroff Project Exam 2025.
 
-### Project Overview:
+## Project Overview:
 
 Dunestay is an accommodation booking platform where users can browse and book venues, while venue managers can manage their properties and bookings. Built as Project Exam 2 for Noroff, this frontend application uses the Holidaze API to provide booking and management functionality.
 
