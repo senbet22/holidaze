@@ -8,9 +8,9 @@ Dunestay is an accommodation booking platform where users can browse and book ve
 
 ### 🌐 <a href="https://dunestay.netlify.app/" target="_blank">Dunestay Live Demo</a>
 
-### Concept:
+### Theme & Design Vision:
 
-I chose a desert-themed booking platform using the `Holidaze` API with all available venues. I developed this dune-side concept to design for something more specific and cohesive.
+I chose a desert-themed booking platform using the `Holidaze` API with all available venues. I developed this dune-side concept as a design challenge to transform generic venue data into a cohesive, branded experience.
 
 ## Key Features
 
@@ -38,10 +38,11 @@ Venue Managers: Register as a manager, create/edit/delete venues, and manage boo
 
 ![DuneStay Homepage Preview](/public/dunestay_preview_homepage.png)
 
-<div style="display: flex; justify-content: space-between;">
+<div style="display: flex; gap: 10px;">
   <img src="/public/dunestay_preview_auth.png" alt="Auth Flow" width="45%"/>
   <img src="/public/dunestay_preview_profile.png" alt="Profile Page" width="45%"/>
 </div>
+
 ###
 
 ## 📝 How to Set Up the Project
