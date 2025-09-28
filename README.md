@@ -36,10 +36,14 @@ Venue Managers: Register as a manager, create/edit/delete venues, and manage boo
 
 ###
 
-![DuneStay Homepage Preview](/public/dunestay_preview_homepage.png)  
-![Auth Flow](/public/dunestay_preview_auth.png)  
-![Profile Page](/public/dunestay_preview_profile.png)
+![DuneStay Homepage Preview](/public/dunestay_preview_homepage.png)
 
+<table>
+  <tr>
+    <td><img src="/public/dunestay_preview_auth.png" alt="Auth Flow" width="400"/></td>
+    <td><img src="/public/dunestay_preview_profile.png" alt="Profile Page" width="400"/></td>
+  </tr>
+</table>
 ###
 
 ## 📝 How to Set Up the Project
@@ -112,12 +116,11 @@ It also imports the `.env` file for the API key, securely handled using `import.
 
 - Alt text for images.
 
-### Notes:
+### Future Updates:
 
-- Venues marked with '✨New' are venues that are yet to be rated.
-- Upon missing content there will be pictures of the Dunestay camel telling you the issue.
+- Add a filter/search on initial load so that venues containing the word 'desert' are displayed first, before showing other venues.
 
-### Resources - Third party apps
+### Resources - Development Tools
 
 - React Focus Lock (Used for accessibility on Modals)
   https://www.npmjs.com/package/react-focus-lock
@@ -127,15 +130,19 @@ It also imports the `.env` file for the API key, securely handled using `import.
   https://www.embla-carousel.com/
 
 - React-toastify
-  used for toast messages through the whole project.
+  Used for toast messages throughout the project.
   https://www.npmjs.com/package/react-toastify
+
+- Claude AI
+  Used for development assistance, code review, and problem-solving guidance.
+  https://www.claude.ai/
 
 <h3 align="left">Built with:</h3>
 
 <div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="react logo"  />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
   <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" height="40" alt="tailwindcss logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
   <img src="https://skillicons.dev/icons?i=vite" height="40" alt="vite logo"  />
 </div>
 
