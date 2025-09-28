@@ -38,9 +38,9 @@ Venue Managers: Register as a manager, create/edit/delete venues, and manage boo
 
 ![DuneStay Homepage Preview](/public/dunestay_preview_homepage.png)
 
-<div style="display: flex; gap: 10px;">
-  <img src="/public/dunestay_preview_auth.png" alt="Auth Flow" width="47%"/>
-  <img src="/public/dunestay_preview_profile.png" alt="Profile Page" width="47%"/>
+<div style="display: flex;">
+  <img src="/public/dunestay_preview_auth.png" alt="Auth Flow" width="50%"/>
+  <img src="/public/dunestay_preview_profile.png" alt="Profile Page" width="50%"/>
 </div>
 
 ###
